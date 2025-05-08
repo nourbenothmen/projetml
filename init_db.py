@@ -1,19 +1,11 @@
-from app import app
-from models import Question, Answer, Log
+from app import create_app
 from extensions import db
+from models import User
 
-def initialize_database():
-    with app.app_context():
-        db.create_all()
-        
-        if not Question.query.first():
-            q = Question(text="Exemple question", category="test")
-            a = Answer(text="Exemple réponse", question=q)
-            log = Log(question_user="Test", answer_id=1, feedback="positive")
-            
-            db.session.add_all([q, a, log])
-            db.session.commit()
-            print("Base initialisée avec données de test")
+app = create_app()
 
-if __name__ == '__main__':
-    initialize_database()
+with app.app_context():
+    #print("Modèles détectés :", [cls.__name__ for cls in db.Model.registry._class_registry.values()])
+    db.drop_all()
+    db.create_all()
+    print("Base de données initialisée avec des données initiales.")

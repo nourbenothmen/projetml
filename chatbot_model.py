@@ -1,22 +1,36 @@
+from preprocess import preprocess_text
 from sklearn.metrics.pairwise import cosine_similarity
-import numpy as np
-from text_representation import create_tfidf_vectors, transform_query
+from sklearn.neighbors import NearestNeighbors
 
-def find_best_match(query, questions, vectorizer, tfidf_matrix):
+def find_best_match(query, questions, vectorizer, tfidf_matrix, language='fr', k=1):
     """
-    Trouver la question la plus similaire à la requête utilisateur.
+    Trouver la question la plus similaire à la requête utilisateur en utilisant KNN.
     Args:
         query (str): Requête utilisateur.
-        questions (list): Liste des questions du jeu de données.
-        vectorizer: Vectoriseur TF-IDF entraîné.
-        tfidf_matrix: Matrice TF-IDF des questions.
+        questions (list): Liste des questions préexistantes.
+        vectorizer (TfidfVectorizer): Vectorizer entraîné.
+        tfidf_matrix (sparse matrix): Matrice TF-IDF des questions.
+        language (str): Langue de la requête ('fr' ou 'en').
+        k (int): Nombre de voisins à considérer (par défaut 1).
     Returns:
-        tuple: (index de la meilleure correspondance, score de similarité)
+        tuple: (best_match_idx, similarity_score) - Index de la meilleure correspondance et score.
     """
-    # Convertir la requête en vecteur TF-IDF
-    query_vector = transform_query(query, vectorizer)
-    # Calculer la similarité cosinus
-    similarities = cosine_similarity(query_vector, tfidf_matrix)
-    # Trouver l’index de la question la plus similaire
-    best_match_idx = np.argmax(similarities)
-    return best_match_idx, similarities[0][best_match_idx]
+    # Prétraiter la requête utilisateur
+    preprocessed_query = preprocess_text(query, language=language)
+    
+    # Transformer la requête en vecteur TF-IDF
+    query_vector = vectorizer.transform([preprocessed_query])
+    
+    # Initialiser et ajuster KNN avec la métrique cosinus
+    knn = NearestNeighbors(n_neighbors=k, metric='cosine')
+    knn.fit(tfidf_matrix)
+    
+    # Trouver les k voisins les plus proches
+    distances, indices = knn.kneighbors(query_vector)
+    
+    # L’index de la question la plus proche (premier voisin)
+    best_match_idx = indices[0][0]
+    # Convertir la distance cosinus en similarité (1 - distance)
+    similarity_score = 1 - distances[0][0]
+    
+    return best_match_idx, similarity_score

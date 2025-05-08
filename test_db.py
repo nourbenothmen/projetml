@@ -1,4 +1,4 @@
-from app import app, db, Question, Answer
+from app import app, db, User
 
 def test_database():
     with app.app_context():
@@ -6,14 +6,7 @@ def test_database():
             # Test de connexion
             db.engine.connect()
             print("✓ Connexion à la base de données réussie!")
-            
-            # Test de création d'enregistrement
-            q = Question(text="Test question", category="test")
-            db.session.add(q)
-            db.session.commit()
-            print("✓ Création d'une question réussie!")
-            
-            return True
+        
         except Exception as e:
             print(f"✗ Erreur: {e}")
             return False

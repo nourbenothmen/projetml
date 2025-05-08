@@ -13,11 +13,12 @@ try:
 except OSError:
     raise Exception("Modèle spaCy 'fr_core_news_sm' non installé. Exécutez : python -m spacy download fr_core_news_sm")
 
-def preprocess_text(text):
+def preprocess_text(text, language='fr'):
     """
     Prétraiter le texte : tokenisation, suppression des mots vides, lemmatisation.
     Args:
         text (str): Texte à prétraiter.
+        language (str): Langue du texte ('fr' ou 'en').
     Returns:
         str: Texte prétraité.
     """
@@ -31,7 +32,12 @@ def preprocess_text(text):
     doc = nlp(text)
     
     # Supprimer les mots vides et la ponctuation, lemmatiser
-    stop_words = set(stopwords.words('french')).union({'quelles', 'quel', 'quels', 'le', 'la', 'l', 'de', 'à', 'd', 'il', 'des'})
+    stop_words = set(stopwords.words('french' if language == 'fr' else 'english'))
+    if language == 'fr':
+        stop_words = stop_words.union({'quelles', 'quel', 'quels', 'le', 'la', 'l', 'de', 'à', 'd', 'il', 'des'})
+    else:
+        stop_words = stop_words.union({'a', 'an', 'the', 'is', 'are', 'what'})
+    
     tokens = []
     for token in doc:
         # Conserver certains mots clés non lemmatisés (ex. "sfax", "iset")

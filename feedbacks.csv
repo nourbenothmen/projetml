@@ -1,0 +1,309 @@
+question,answer_id,feedback,timestamp,similarity_score
+Comment s’inscrire à l’ISET Sfax ?,2,pending,2025-05-05T18:46:29.311940,1.0
+Comment s’inscrire à l’ISET Sfax ?,2,pending,2025-05-05T18:46:31.848169,1.0
+Comment obtenir mon emploi du temps ?,0,pending,2025-05-05T18:50:46.123295,0.8164965809277261
+Comment obtenir mon emploi du temps ?,0,pending,2025-05-05T18:52:31.301479,0.8164965809277261
+Comment obtenir mon emploi du temps ?,2,positive,2025-05-05T21:08:04.234737,
+Comment s’inscrire à l’ISET Sfax ?,2,pending,2025-05-05T21:24:04.024250,1.0000000000000002
+Comment s’inscrire à l’ISET Sfax ?,2,pending,2025-05-05T21:24:08.064865,1.0000000000000002
+Comment s’inscrire à l’ISET Sfax ?,2,pending,2025-05-05T21:24:50.592508,1.0000000000000002
+Comment s’inscrire à l’ISET Sfax ?,2,pending,2025-05-05T21:43:17.459052,1.0000000000000002
+Comment s’inscrire à l’ISET Sfax ?,2,pending,2025-05-05T22:46:26.387377,1.0000000000000002
+Comment s’inscrire à l’ISET Sfax ?,2,positive,2025-05-05T22:46:32.561975,
+inscription,10,pending,2025-05-05T22:47:22.106780,0.5744417692106352
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T14:04:09.475048,1.0000000000000002
+What are the Computer Science courses?,0,pending,2025-05-06T14:04:11.523287,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-06T14:04:13.582383,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T14:11:09.861925,1.0000000000000002
+What are the Computer Science courses?,0,pending,2025-05-06T14:11:11.906526,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-06T14:11:13.956112,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T14:16:11.682687,1.0000000000000002
+What are the Computer Science courses?,0,pending,2025-05-06T14:16:13.740781,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-06T14:16:15.798793,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T14:21:18.645073,1.0000000000000002
+What are the Computer Science courses?,0,pending,2025-05-06T14:21:20.710377,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-06T14:21:22.777119,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T15:03:32.033448,1.0000000000000002
+Comment s'inscrire à l'ISET?,1,pending,2025-05-06T15:04:35.398372,1.0000000000000002
+Comment s'inscrire à l'ISET?,1,positive,2025-05-06T15:05:26.937689,
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T15:08:34.588920,1.0000000000000002
+Comment s'inscrire à l'ISET?,1,pending,2025-05-06T15:09:25.996575,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T15:11:44.499253,1.0000000000000002
+Comment s'inscrire à l'ISET?,1,pending,2025-05-06T15:12:42.846059,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T15:21:55.136467,1.0000000000000002
+Comment s'inscrire à l'ISET?,1,pending,2025-05-06T15:23:28.381246,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T15:35:57.539890,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T15:36:04.093041,1.0000000000000002
+Comment s'inscrire à l'ISET?,1,pending,2025-05-06T15:36:26.621719,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T15:38:18.510606,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T15:39:32.753027,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T15:41:51.429683,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T15:53:12.319762,1.0000000000000002
+Quels sont les cours de Génie Civil?,0,pending,2025-05-06T15:54:45.349788,1.0000000000000002
+Comment s'inscrire à l'ISET?,1,pending,2025-05-06T15:55:14.154640,1.0000000000000002
+Comment s'inscrire à l'ISET?,1,negative,2025-05-06T15:55:19.033228,
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T17:38:55.478557,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T17:38:57.557321,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-07T17:38:59.619267,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T21:03:31.025531,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T21:03:33.091384,0.7745966692414836
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T21:32:45.886409,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T21:32:47.989459,0.7745966692414836
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T21:43:41.405125,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T21:43:43.510837,0.7745966692414836
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T22:00:43.130848,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T22:00:45.202251,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-07T22:00:47.288568,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T22:12:50.698305,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T22:12:52.757627,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-07T22:12:54.856180,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T22:26:19.189222,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T22:26:21.258873,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-07T22:26:23.313785,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T22:44:42.629419,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T22:44:44.706008,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-07T22:44:46.783980,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T22:46:13.509500,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T22:46:15.554797,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-07T22:46:17.600391,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T23:31:35.233350,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T23:31:37.342386,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-07T23:31:39.409684,1.0
+Quelles sont les dates d'inscription?,2,pending,2025-05-07T23:31:41.516990,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T23:33:42.764533,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T23:33:44.863983,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-07T23:33:46.939627,1.0
+Quelles sont les dates d'inscription?,2,pending,2025-05-07T23:33:49.035654,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T23:40:50.128769,1.0
+Comment s'inscrire à l'ISET?,1,pending,2025-05-07T23:41:11.012997,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T23:46:47.573959,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T23:46:49.742618,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-07T23:46:51.826742,1.0
+Quelles sont les dates d'inscription?,2,pending,2025-05-07T23:46:53.905073,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-07T23:54:13.151010,1.0
+What are the Computer Science courses?,0,pending,2025-05-07T23:54:15.234663,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-07T23:54:17.285448,1.0
+Quelles sont les dates d'inscription?,2,pending,2025-05-07T23:54:19.354885,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-08T00:10:24.460051,1.0
+What are the Computer Science courses?,0,pending,2025-05-08T00:10:26.564690,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-08T00:10:28.639242,1.0
+Quelles sont les dates d'inscription?,2,pending,2025-05-08T00:10:30.702440,1.0
+Quelles sont les formations en Sciences Économiques et Gestion?,3,pending,2025-05-08T00:10:32.784226,1.0
+How can I apply for a professional master’s at ISET Sfax?,2,pending,2025-05-08T00:10:34.874506,1.0
+Comment faire une pré-inscription en ligne?,5,pending,2025-05-08T00:10:36.967905,0.8698516078336497
+What student clubs are there at ISET Sfax?,4,pending,2025-05-08T00:10:39.048063,1.0
+Quels services offre le Centre Informatique?,7,pending,2025-05-08T00:10:41.140271,1.0
+How can I contact ISET Sfax?,9,pending,2025-05-08T00:10:43.303689,1.0
+Comment trouver des offres de stage?,8,pending,2025-05-08T00:10:45.356351,0.6455414987249457
+Quels sont les partenariats académiques de l'ISET?,9,pending,2025-05-08T00:10:47.429337,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-08T00:18:10.062258,1.0
+What are the Computer Science courses?,0,pending,2025-05-08T00:18:12.147604,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-08T00:18:14.235080,1.0
+Quelles sont les dates d'inscription?,2,pending,2025-05-08T00:18:16.331283,1.0
+Quelles sont les formations en Sciences Économiques et Gestion?,3,pending,2025-05-08T00:18:18.440476,1.0
+How can I apply for a professional master’s at ISET Sfax?,2,pending,2025-05-08T00:18:20.512615,1.0
+Comment faire une pré-inscription en ligne?,5,pending,2025-05-08T00:18:22.593308,0.8698516078336497
+What student clubs are there at ISET Sfax?,4,pending,2025-05-08T00:18:24.682435,1.0
+Quels services offre le Centre Informatique?,7,pending,2025-05-08T00:18:26.763756,1.0
+How can I contact ISET Sfax?,9,pending,2025-05-08T00:18:28.859886,1.0
+Comment trouver des offres de stage?,8,pending,2025-05-08T00:18:30.951958,0.6455414987249457
+Quels sont les partenariats académiques de l'ISET?,9,pending,2025-05-08T00:18:33.014318,1.0
+What are the tuition fees at ISET Sfax?,5,pending,2025-05-08T00:18:45.433327,0.5595626757386623
+What international exchange programs are available?,1,pending,2025-05-08T00:18:53.694963,0.6546536707079773
+What research opportunities are there at ISET Sfax?,5,pending,2025-05-08T00:18:57.846580,0.5595626757386623
+How can I join the ISET Sfax alumni network?,5,pending,2025-05-08T00:19:01.970317,0.5595626757386623
+Comment s'inscrire à un club étudiant?,6,pending,2025-05-08T00:19:10.230044,0.5467204626955793
+Quels sont les cours de Génie Civil?,0,pending,2025-05-08T00:20:30.097904,1.0
+What are the Computer Science courses?,0,pending,2025-05-08T00:20:32.186087,0.7745966692414836
+Comment s'inscrire à l'ISET?,1,pending,2025-05-08T00:20:34.264186,1.0
+Quelles sont les dates d'inscription?,2,pending,2025-05-08T00:20:36.331392,1.0
+Quelles sont les formations en Sciences Économiques et Gestion?,3,pending,2025-05-08T00:20:38.412333,1.0
+How can I apply for a professional master’s at ISET Sfax?,2,pending,2025-05-08T00:20:40.495711,1.0
+Comment faire une pré-inscription en ligne?,5,pending,2025-05-08T00:20:42.580392,0.8698516078336497
+What student clubs are there at ISET Sfax?,4,pending,2025-05-08T00:20:44.666758,1.0
+Quels services offre le Centre Informatique?,7,pending,2025-05-08T00:20:46.752852,1.0
+How can I contact ISET Sfax?,9,pending,2025-05-08T00:20:48.838976,1.0
+Comment trouver des offres de stage?,8,pending,2025-05-08T00:20:50.929956,0.6455414987249457
+Quels sont les partenariats académiques de l'ISET?,9,pending,2025-05-08T00:20:53.005575,1.0
+What are the tuition fees at ISET Sfax?,5,pending,2025-05-08T00:21:05.379700,0.5595626757386623
+What international exchange programs are available?,1,pending,2025-05-08T00:21:13.616199,0.6546536707079773
+What research opportunities are there at ISET Sfax?,5,pending,2025-05-08T00:21:17.736190,0.5595626757386623
+How can I join the ISET Sfax alumni network?,5,pending,2025-05-08T00:21:21.848505,0.5595626757386623
+Comment s'inscrire à un club étudiant?,6,pending,2025-05-08T00:21:30.149159,0.5467204626955793
+Quels sont les cours de Génie Civil?,0,pending,2025-05-08T00:29:32.981937,1.0
+What are the Computer Science courses?,0,pending,2025-05-08T00:29:35.076053,0.741160907884159
+Comment s'inscrire à l'ISET?,1,pending,2025-05-08T00:29:37.153341,1.0
+Quelles sont les dates d'inscription?,2,pending,2025-05-08T00:29:39.207433,1.0
+Quelles sont les formations en Sciences Économiques et Gestion?,3,pending,2025-05-08T00:29:41.285792,0.9999999999999999
+How can I apply for a professional master’s at ISET Sfax?,2,pending,2025-05-08T00:29:43.342042,1.0
+Comment faire une pré-inscription en ligne?,5,pending,2025-05-08T00:29:45.406874,0.8728812694922703
+What student clubs are there at ISET Sfax?,4,pending,2025-05-08T00:29:47.462656,1.0
+Quels services offre le Centre Informatique?,7,pending,2025-05-08T00:29:49.520783,1.0
+How can I contact ISET Sfax?,9,pending,2025-05-08T00:29:51.576624,1.0
+Comment trouver des offres de stage?,8,pending,2025-05-08T00:29:53.641111,0.6270187135043425
+Quels sont les partenariats académiques de l'ISET?,9,pending,2025-05-08T00:29:55.703603,1.0
+Quels sont les programmes de licence à l'ISET?,13,pending,2025-05-08T00:29:57.780126,0.7523681271085056
+What undergraduate programs are offered at ISET Sfax?,11,pending,2025-05-08T00:29:59.851112,0.677979230154269
+Comment obtenir un certificat de scolarité?,14,pending,2025-05-08T00:30:01.920734,0.7941162248556374
+How can I get a student certificate?,12,pending,2025-05-08T00:30:03.987992,1.0
+Quels sont les frais d'inscription à l'ISET?,15,pending,2025-05-08T00:30:06.049730,1.0
+What are the tuition fees at ISET Sfax?,13,pending,2025-05-08T00:30:08.110164,1.0
+Comment candidater pour une bourse?,16,pending,2025-05-08T00:30:10.159173,0.7082895954023245
+How do I apply for a scholarship?,14,pending,2025-05-08T00:30:12.220340,1.0
+Quels sont les programmes d'échange internationaux?,17,pending,2025-05-08T00:30:14.288314,1.0
+What international exchange programs are available?,15,pending,2025-05-08T00:30:16.343041,0.6366478264916706
+Quelles sont les opportunités de recherche à l'ISET?,18,pending,2025-05-08T00:30:18.402302,0.5384970469119916
+What research opportunities are there at ISET Sfax?,16,pending,2025-05-08T00:30:20.468352,0.5367710228084805
+Comment rejoindre le réseau des anciens élèves?,19,pending,2025-05-08T00:30:22.540231,1.0
+How can I join the ISET Sfax alumni network?,17,pending,2025-05-08T00:30:24.606752,1.0
+Quels sont les horaires des cours?,20,pending,2025-05-08T00:30:26.672982,1.0
+Comment accéder à la bibliothèque de l'ISET?,21,pending,2025-05-08T00:30:28.730634,0.6673720193009958
+Quels sont les critères d'admission à l'ISET?,22,pending,2025-05-08T00:30:30.800328,1.0
+Comment s'inscrire à un club étudiant?,23,pending,2025-05-08T00:30:32.855483,1.0
+Quels sont les cours de Génie Civil?,0,pending,2025-05-08T00:40:05.393976,1.0
+What are the Computer Science courses?,0,pending,2025-05-08T00:40:07.487428,0.741160907884159
+Comment s'inscrire à l'ISET?,1,pending,2025-05-08T00:40:09.554354,1.0
+Quelles sont les dates d'inscription?,2,pending,2025-05-08T00:40:11.610968,1.0
+Quelles sont les formations en Sciences Économiques et Gestion?,3,pending,2025-05-08T00:40:13.682879,0.9999999999999999
+How can I apply for a professional master’s at ISET Sfax?,2,pending,2025-05-08T00:40:15.739116,1.0
+Comment faire une pré-inscription en ligne?,5,pending,2025-05-08T00:40:17.822484,0.8728812694922703
+What student clubs are there at ISET Sfax?,4,pending,2025-05-08T00:40:19.898737,1.0
+Quels services offre le Centre Informatique?,7,pending,2025-05-08T00:40:21.958440,1.0
+How can I contact ISET Sfax?,9,pending,2025-05-08T00:40:24.026573,1.0
+Comment trouver des offres de stage?,8,pending,2025-05-08T00:40:26.081355,0.6270187135043425
+Quels sont les partenariats académiques de l'ISET?,9,pending,2025-05-08T00:40:28.166859,1.0
+Quels sont les programmes de licence à l'ISET?,13,pending,2025-05-08T00:40:30.226753,0.7523681271085056
+What undergraduate programs are offered at ISET Sfax?,11,pending,2025-05-08T00:40:32.286164,0.677979230154269
+Comment obtenir un certificat de scolarité?,14,pending,2025-05-08T00:40:34.373108,0.7941162248556374
+How can I get a student certificate?,12,pending,2025-05-08T00:40:36.434240,1.0
+Quels sont les frais d'inscription à l'ISET?,15,pending,2025-05-08T00:40:38.490362,1.0
+What are the tuition fees at ISET Sfax?,13,pending,2025-05-08T00:40:40.573408,1.0
+Comment candidater pour une bourse?,16,pending,2025-05-08T00:40:42.626352,0.7082895954023245
+How do I apply for a scholarship?,14,pending,2025-05-08T00:40:44.692918,1.0
+Quels sont les programmes d'échange internationaux?,17,pending,2025-05-08T00:40:46.758075,1.0
+What international exchange programs are available?,15,pending,2025-05-08T00:40:48.839824,0.6366478264916706
+Quelles sont les opportunités de recherche à l'ISET?,18,pending,2025-05-08T00:40:50.924614,0.5384970469119916
+What research opportunities are there at ISET Sfax?,16,pending,2025-05-08T00:40:52.985768,0.5367710228084805
+Comment rejoindre le réseau des anciens élèves?,19,pending,2025-05-08T00:40:55.056541,1.0
+How can I join the ISET Sfax alumni network?,17,pending,2025-05-08T00:40:57.123508,1.0
+Quels sont les horaires des cours?,20,pending,2025-05-08T00:40:59.168262,1.0
+Comment accéder à la bibliothèque de l'ISET?,21,pending,2025-05-08T00:41:01.226979,0.6673720193009958
+Quels sont les critères d'admission à l'ISET?,22,pending,2025-05-08T00:41:03.293161,1.0
+Comment s'inscrire à un club étudiant?,23,pending,2025-05-08T00:41:05.358312,1.0
+What programs are available in Mechanical Engineering?,1,pending,2025-05-08T00:41:07.433455,0.9999999999999999
+Quelles sont les conditions pour candidater à un mastère?,10,pending,2025-05-08T00:41:09.492461,1.0
+What are the IT services at ISET Sfax?,5,pending,2025-05-08T00:41:11.554562,1.0
+Quelles sont les manifestations organisées à l'ISET?,12,pending,2025-05-08T00:41:13.613886,1.0
+What documents are required for registration?,24,pending,2025-05-08T00:41:15.689685,1.0
+Comment demander une aide financière?,28,pending,2025-05-08T00:41:17.742317,1.0
+Comment organiser un événement étudiant?,32,pending,2025-05-08T00:41:21.857079,1.0
+How can I find an international internship?,6,pending,2025-05-08T00:41:25.991673,0.5263570991888983
+What volunteering opportunities are at ISET Sfax?,16,pending,2025-05-08T00:41:32.164412,0.7562424107110547
+Comment demander un transfert à l'ISET?,42,pending,2025-05-08T00:41:34.232103,0.5303780140040315
+Quels sont les cours en ligne disponibles?,20,pending,2025-05-08T00:41:36.294086,0.5379391347502425
+Comment organiser une visite à l'ISET?,32,pending,2025-05-08T00:41:44.507822,0.5599776047085372
+Comment s'inscrire à un programme doctoral?,1,pending,2025-05-08T00:41:48.621818,0.7532990847194445
+Quels sont les cours de Génie Civil?,0,pending,2025-05-08T00:55:58.131127,1.0
+What are the Computer Science courses?,0,pending,2025-05-08T00:56:00.196781,0.7587213129627965
+Comment s'inscrire à l'ISET?,1,pending,2025-05-08T00:56:02.278608,1.0
+Quelles sont les dates d'inscription?,2,pending,2025-05-08T00:56:04.350108,1.0
+Quelles sont les formations en Sciences Économiques et Gestion?,3,pending,2025-05-08T00:56:06.422524,1.0
+How can I apply for a professional master’s at ISET Sfax?,2,pending,2025-05-08T00:56:08.513285,1.0
+Comment faire une pré-inscription en ligne?,5,pending,2025-05-08T00:56:10.580635,0.8834075189103966
+What student clubs are there at ISET Sfax?,4,pending,2025-05-08T00:56:12.650966,1.0
+Quels services offre le Centre Informatique?,7,pending,2025-05-08T00:56:14.718486,1.0
+How can I contact ISET Sfax?,9,pending,2025-05-08T00:56:16.787429,1.0
+Comment trouver des offres de stage?,47,pending,2025-05-08T00:56:18.859469,0.6033076455494902
+Quels sont les partenariats académiques de l'ISET?,9,pending,2025-05-08T00:56:20.921962,1.0
+Quels sont les programmes de licence à l'ISET?,13,pending,2025-05-08T00:56:22.987014,0.7574896786749654
+What undergraduate programs are offered at ISET Sfax?,11,pending,2025-05-08T00:56:25.061275,0.6637205167187039
+Comment obtenir un certificat de scolarité?,14,pending,2025-05-08T00:56:27.137507,0.7892711012415455
+How can I get a student certificate?,12,pending,2025-05-08T00:56:29.234656,1.0
+Quels sont les frais d'inscription à l'ISET?,15,pending,2025-05-08T00:56:31.303659,1.0
+What are the tuition fees at ISET Sfax?,13,pending,2025-05-08T00:56:33.381237,1.0
+Comment candidater pour une bourse?,16,pending,2025-05-08T00:56:35.450711,0.7224240131068151
+How do I apply for a scholarship?,14,pending,2025-05-08T00:56:37.525123,1.0
+Quels sont les programmes d'échange internationaux?,17,pending,2025-05-08T00:56:39.594702,1.0
+What international exchange programs are available?,15,pending,2025-05-08T00:56:41.674219,0.6029911205286151
+What research opportunities are there at ISET Sfax?,16,pending,2025-05-08T00:56:45.798238,0.5619445274787109
+Comment rejoindre le réseau des anciens élèves?,19,pending,2025-05-08T00:56:47.868004,1.0
+How can I join the ISET Sfax alumni network?,17,pending,2025-05-08T00:56:49.935621,1.0
+Quels sont les horaires des cours?,20,pending,2025-05-08T00:56:52.018453,1.0
+Comment accéder à la bibliothèque de l'ISET?,21,pending,2025-05-08T00:56:54.099907,0.6453417123290581
+Quels sont les critères d'admission à l'ISET?,22,pending,2025-05-08T00:56:56.171211,1.0
+Comment s'inscrire à un club étudiant?,23,pending,2025-05-08T00:56:58.240471,1.0
+What programs are available in Mechanical Engineering?,1,pending,2025-05-08T00:57:00.317450,1.0
+Quelles sont les conditions pour candidater à un mastère?,10,pending,2025-05-08T00:57:02.403282,1.0
+What are the IT services at ISET Sfax?,5,pending,2025-05-08T00:57:04.485357,1.0
+Quelles sont les manifestations organisées à l'ISET?,12,pending,2025-05-08T00:57:06.562356,1.0
+What documents are required for registration?,24,pending,2025-05-08T00:57:08.635023,1.0
+Comment demander une aide financière?,28,pending,2025-05-08T00:57:10.704509,1.0
+Quels sont les programmes de mastère en informatique?,29,pending,2025-05-08T00:57:12.793004,0.7752773155746179
+Comment organiser un événement étudiant?,32,pending,2025-05-08T00:57:14.863619,1.0
+Quels sont les prérequis pour un mastère à l'ISET?,46,pending,2025-05-08T00:57:16.929663,1.0
+How can I find an international internship?,45,pending,2025-05-08T00:57:19.006086,1.0
+Quels sont les services de santé pour les étudiants?,48,pending,2025-05-08T00:57:21.089174,1.0
+Comment obtenir une certification professionnelle?,49,pending,2025-05-08T00:57:23.160759,1.0
+What volunteering opportunities are at ISET Sfax?,48,pending,2025-05-08T00:57:25.227896,1.0
+Comment demander un transfert à l'ISET?,51,pending,2025-05-08T00:57:27.296676,1.0
+Quels sont les cours en ligne disponibles?,52,pending,2025-05-08T00:57:29.357567,0.607617370832949
+Quelles sont les bourses internationales disponibles?,54,pending,2025-05-08T00:57:31.426162,1.0
+Comment accéder aux ressources de la bibliothèque en ligne?,55,pending,2025-05-08T00:57:33.481362,0.7760137027709083
+Quels sont les partenariats avec des universités étrangères?,56,pending,2025-05-08T00:57:35.539373,0.6029529183191151
+Comment organiser une visite à l'ISET?,57,pending,2025-05-08T00:57:37.614093,1.0
+Quelles sont les opportunités d'emploi après un diplôme?,58,pending,2025-05-08T00:57:39.692697,1.0
+Comment s'inscrire à un programme doctoral?,59,pending,2025-05-08T00:57:41.771532,0.6929309384087423
+Quels sont les cours de Génie Civil?,0,pending,2025-05-08T01:24:15.149600,0.6368687152862549
+What are the Computer Science courses?,0,pending,2025-05-08T01:25:43.272868,0.6482473611831665
+Comment s'inscrire à l'ISET?,11,pending,2025-05-08T01:27:13.436755,0.7235345840454102
+Quels sont les cours de Génie Civil?,0,pending,2025-05-08T01:30:10.118896,1.0
+What are the Computer Science courses?,0,pending,2025-05-08T01:30:12.179607,0.7587213129627965
+Comment s'inscrire à l'ISET?,1,pending,2025-05-08T01:30:14.237873,1.0
+Quelles sont les dates d'inscription?,2,pending,2025-05-08T01:30:16.311007,1.0
+Quelles sont les formations en Sciences Économiques et Gestion?,3,pending,2025-05-08T01:30:18.401385,1.0
+How can I apply for a professional master’s at ISET Sfax?,2,pending,2025-05-08T01:30:20.475234,1.0
+Comment faire une pré-inscription en ligne?,5,pending,2025-05-08T01:30:22.551026,0.8834075189103966
+What student clubs are there at ISET Sfax?,4,pending,2025-05-08T01:30:24.646407,1.0
+Quels services offre le Centre Informatique?,7,pending,2025-05-08T01:30:26.721678,1.0
+How can I contact ISET Sfax?,9,pending,2025-05-08T01:30:28.791970,1.0
+Comment trouver des offres de stage?,47,pending,2025-05-08T01:30:30.862981,0.6033076455494902
+Quels sont les partenariats académiques de l'ISET?,9,pending,2025-05-08T01:30:32.945520,1.0
+Quels sont les programmes de licence à l'ISET?,13,pending,2025-05-08T01:30:35.028921,0.7574896786749654
+What undergraduate programs are offered at ISET Sfax?,11,pending,2025-05-08T01:30:37.134168,0.6637205167187039
+Comment obtenir un certificat de scolarité?,14,pending,2025-05-08T01:30:39.200412,0.7892711012415455
+How can I get a student certificate?,12,pending,2025-05-08T01:30:41.272162,1.0
+Quels sont les frais d'inscription à l'ISET?,15,pending,2025-05-08T01:30:43.393016,1.0
+What are the tuition fees at ISET Sfax?,13,pending,2025-05-08T01:30:45.466639,1.0
+Comment candidater pour une bourse?,16,pending,2025-05-08T01:30:47.531837,0.7224240131068151
+How do I apply for a scholarship?,14,pending,2025-05-08T01:30:49.598286,1.0
+Quels sont les programmes d'échange internationaux?,17,pending,2025-05-08T01:30:51.690968,1.0
+What international exchange programs are available?,15,pending,2025-05-08T01:30:53.741901,0.6029911205286151
+What research opportunities are there at ISET Sfax?,16,pending,2025-05-08T01:30:57.887698,0.5619445274787109
+Comment rejoindre le réseau des anciens élèves?,19,pending,2025-05-08T01:30:59.960571,1.0
+How can I join the ISET Sfax alumni network?,17,pending,2025-05-08T01:31:02.037189,1.0
+Quels sont les horaires des cours?,20,pending,2025-05-08T01:31:04.102260,1.0
+Comment accéder à la bibliothèque de l'ISET?,21,pending,2025-05-08T01:31:06.182075,0.6453417123290581
+Quels sont les critères d'admission à l'ISET?,22,pending,2025-05-08T01:31:08.256882,1.0
+Comment s'inscrire à un club étudiant?,23,pending,2025-05-08T01:31:10.348339,1.0
+What programs are available in Mechanical Engineering?,1,pending,2025-05-08T01:31:12.410114,1.0
+Quelles sont les conditions pour candidater à un mastère?,10,pending,2025-05-08T01:31:14.482193,1.0
+What are the IT services at ISET Sfax?,5,pending,2025-05-08T01:31:16.554085,1.0
+Quelles sont les manifestations organisées à l'ISET?,12,pending,2025-05-08T01:31:18.621085,1.0
+What documents are required for registration?,24,pending,2025-05-08T01:31:20.702743,1.0
+Comment demander une aide financière?,28,pending,2025-05-08T01:31:22.793900,1.0
+Quels sont les programmes de mastère en informatique?,29,pending,2025-05-08T01:31:24.845967,0.7752773155746179
+Comment organiser un événement étudiant?,32,pending,2025-05-08T01:31:26.909404,1.0
+Quels sont les prérequis pour un mastère à l'ISET?,46,pending,2025-05-08T01:31:28.992183,1.0
+How can I find an international internship?,45,pending,2025-05-08T01:31:31.051343,1.0
+Quels sont les services de santé pour les étudiants?,48,pending,2025-05-08T01:31:33.179218,1.0
+Comment obtenir une certification professionnelle?,49,pending,2025-05-08T01:31:35.250539,1.0
+What volunteering opportunities are at ISET Sfax?,48,pending,2025-05-08T01:31:37.324268,1.0
+Comment demander un transfert à l'ISET?,51,pending,2025-05-08T01:31:39.381171,1.0
+Quels sont les cours en ligne disponibles?,52,pending,2025-05-08T01:31:41.438663,0.607617370832949
+Quelles sont les bourses internationales disponibles?,54,pending,2025-05-08T01:31:43.529756,1.0
+Comment accéder aux ressources de la bibliothèque en ligne?,55,pending,2025-05-08T01:31:45.585520,0.7760137027709083
+Quels sont les partenariats avec des universités étrangères?,56,pending,2025-05-08T01:31:47.646860,0.6029529183191151
+Comment organiser une visite à l'ISET?,57,pending,2025-05-08T01:31:49.692117,1.0
+Quelles sont les opportunités d'emploi après un diplôme?,58,pending,2025-05-08T01:31:51.762839,1.0
+Comment s'inscrire à un programme doctoral?,59,pending,2025-05-08T01:31:53.847231,0.6929309384087423
+Quels sont les mastères professionnels à l'ISET Sfax?,4,pending,2025-05-08T01:32:37.082552,1.0

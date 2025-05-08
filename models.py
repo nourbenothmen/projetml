@@ -1,24 +1,15 @@
-from datetime import datetime
 from extensions import db
 
-class Question(db.Model):
+class User(db.Model):
+    __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
-    text = db.Column(db.String(500), unique=True, nullable=False, index=True)
-    category = db.Column(db.String(50), nullable=False)
-    answer = db.relationship('Answer', backref='question', uselist=False)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    password_hash = db.Column(db.String(256), nullable=False)
 
-class Answer(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    text = db.Column(db.String(1000), nullable=False)
-    url = db.Column(db.String(200), nullable=True)
-    question_id = db.Column(db.Integer, db.ForeignKey('question.id'), nullable=False)
+    def set_password(self, password):
+        from werkzeug.security import generate_password_hash
+        self.password_hash = generate_password_hash(password, method='scrypt')
 
-class Log(db.Model):
-    __tablename__ = 'logs'
-    id = db.Column(db.Integer, primary_key=True)
-    question_user = db.Column(db.String(500), nullable=False)
-    answer_id = db.Column(db.Integer, db.ForeignKey('answer.id'), nullable=False)
-    date = db.Column(db.DateTime, default=datetime.utcnow, nullable=False, index=True)
-    feedback = db.Column(db.String(20), nullable=True)
-    similarity_score = db.Column(db.Float, nullable=True)  # Nouveau champ
-    answer = db.relationship('Answer', backref='logs')
+    def check_password(self, password):
+        from werkzeug.security import check_password_hash
+        return check_password_hash(self.password_hash, password)

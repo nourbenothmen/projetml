@@ -14,11 +14,11 @@ answers = [
 ]
 
 # Créer les vecteurs TF-IDF
-vectorizer, tfidf_matrix = create_tfidf_vectors(questions)
+vectorizer, tfidf_matrix = create_tfidf_vectors(questions, language='fr')
 
 # Tester une requête utilisateur
 query = "Critères d'admission à l'ISET ?"
-best_match_idx, similarity_score = find_best_match(query, questions, vectorizer, tfidf_matrix)
+best_match_idx, similarity_score = find_best_match(query, questions, vectorizer, tfidf_matrix, language='fr')
 print(f"Requête : {query}")
 print(f"Meilleure correspondance : {questions[best_match_idx]}")
 print(f"Réponse : {answers[best_match_idx]}")
