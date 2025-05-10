@@ -1,125 +1,99 @@
-question,answer,category,language,url,intent
-Quels sont les cours de Génie Civil?,Consultez la page des formations.,Formation,fr,https://isetsf.rnu.tn/fr/formation/genie-civil,info
-What are the Computer Science courses?,Check the training section.,Formation,en,https://isetsf.rnu.tn/fr/formation/informatique,info
-Comment s'inscrire à l'ISET?,Suivez les étapes sur la page d'inscription.,Inscription,fr,https://isetsf.rnu.tn/fr/inscription,info
-Quelles sont les dates d'inscription?,"Désolé, je n’ai pas de réponse pertinente.",Inscription,fr,,info
-Quelles sont les formations en Sciences Économiques et Gestion?,Consultez la page des licences en Sciences Économiques et Gestion.,Formation,fr,https://isetsf.rnu.tn/fr/formation/sc-eco-et-gestion,info
-What programs are available in Mechanical Engineering?,Visit the Mechanical Engineering training page.,Formation,en,https://isetsf.rnu.tn/fr/formation/genie-mecanique,info
-Quels sont les mastères professionnels à l'ISET Sfax?,Découvrez les mastères professionnels sur la page dédiée.,Formation,fr,https://isetsf.rnu.tn/fr/formation/mastere-professionnel,info
-How can I apply for a professional master’s at ISET Sfax?,Follow the online application process for master’s programs.,Formation,en,https://isetsf.rnu.tn/fr/candidature-premiere-annee-mastere,info
-Comment faire une pré-inscription en ligne?,Utilisez le site d'inscription à distance pour la pré-inscription.,Inscription,fr,https://isetsf.rnu.tn/fr/inscription,info
-What is the process for remote registration?,Complete the remote registration on the official platform.,Inscription,en,https://isetsf.rnu.tn/fr/inscription,info
-Quels sont les clubs étudiants à l'ISET Sfax?,Explorez les clubs et activités sur la page de la vie estudiantine.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/clubs,info
-What student clubs are there at ISET Sfax?,Check the student life section for club information.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/clubs,info
-Quels services offre le Centre Informatique?,Le Centre Informatique fournit des ressources et une assistance technique.,Services,fr,https://isetsf.rnu.tn/fr/centre-informatique,info
-What are the IT services at ISET Sfax?,The IT Center offers computing resources and technical support.,Services,en,https://isetsf.rnu.tn/fr/centre-informatique,info
-Comment trouver des offres de stage?,Consultez les offres de stage sur la page entreprise.,Entreprise,fr,https://isetsf.rnu.tn/fr/offres-de-stage,info
-Where can I find internship opportunities?,Visit the enterprise section for internship offers.,Entreprise,en,https://isetsf.rnu.tn/fr/offres-de-stage,info
-Quels sont les partenariats académiques de l'ISET?,Découvrez les partenariats académiques sur la page dédiée.,Partenariats,fr,https://isetsf.rnu.tn/fr/partenariats-academique,info
-What academic partnerships does ISET Sfax have?,Check the academic partnerships page for details.,Partenariats,en,https://isetsf.rnu.tn/fr/partenariats-academique,info
-Quelles sont les conditions pour candidater à un mastère?,Vérifiez les critères sur la page de candidature au mastère.,Formation,fr,https://isetsf.rnu.tn/fr/candidature-premiere-annee-mastere,info
-What are the requirements for a master’s application?,Review the eligibility criteria on the master’s application page.,Formation,en,https://isetsf.rnu.tn/fr/candidature-premiere-annee-mastere,info
-Comment contacter l'ISET Sfax?,Utilisez les coordonnées sur la page de contact.,Contact,fr,https://isetsf.rnu.tn/fr/contact,info
-How can I contact ISET Sfax?,Find contact information on the official contact page.,Contact,en,https://isetsf.rnu.tn/fr/contact,info
-Quelles sont les manifestations organisées à l'ISET?,Consultez les événements sur la page des manifestations.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/manifestations,info
-What events are organized at ISET Sfax?,Explore events on the student activities page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/manifestations,info
-Quels sont les programmes de licence à l'ISET?,Consultez la liste des licences sur la page des formations.,Formation,fr,https://isetsf.rnu.tn/fr/formation/licences,info
-What undergraduate programs are offered at ISET Sfax?,Check the undergraduate programs on the training page.,Formation,en,https://isetsf.rnu.tn/fr/formation/licences,info
-Comment obtenir un certificat de scolarité?,Demandez votre certificat via le portail étudiant.,Services,fr,https://isetsf.rnu.tn/fr/portail-etudiant,info
-How can I get a student certificate?,Request a certificate through the student portal.,Services,en,https://isetsf.rnu.tn/fr/portail-etudiant,info
-Quels sont les frais d'inscription à l'ISET?,Consultez les frais sur la page des admissions.,Admissions,fr,https://isetsf.rnu.tn/fr/admissions,info
-What are the tuition fees at ISET Sfax?,Check the tuition fees on the admissions page.,Admissions,en,https://isetsf.rnu.tn/fr/admissions,info
-Comment candidater pour une bourse?,Suivez les instructions sur la page des bourses.,Bourses,fr,https://isetsf.rnu.tn/fr/bourses,info
-How do I apply for a scholarship?,Follow the scholarship application process on the dedicated page.,Bourses,en,https://isetsf.rnu.tn/fr/bourses,info
-Quels sont les programmes d'échange internationaux?,Découvrez les programmes d'échange sur la page internationale.,International,fr,https://isetsf.rnu.tn/fr/international,info
-What international exchange programs are available?,Check the international programs page for exchange opportunities.,International,en,https://isetsf.rnu.tn/fr/international,info
-Quelles sont les opportunités de recherche à l'ISET?,Consultez les projets de recherche sur la page dédiée.,Recherche,fr,https://isetsf.rnu.tn/fr/recherche,info
-What research opportunities are there at ISET Sfax?,Explore research projects on the research page.,Recherche,en,https://isetsf.rnu.tn/fr/recherche,info
-Comment rejoindre le réseau des anciens élèves?,Inscrivez-vous sur la plateforme des alumni.,Alumni,fr,https://isetsf.rnu.tn/fr/alumni,info
-How can I join the ISET Sfax alumni network?,Register on the alumni platform.,Alumni,en,https://isetsf.rnu.tn/fr/alumni,info
-Quels sont les horaires des cours?,Consultez les emplois du temps sur le portail étudiant.,Services,fr,https://isetsf.rnu.tn/fr/portail-etudiant,info
-What are the class schedules at ISET Sfax?,Check the schedules on the student portal.,Services,en,https://isetsf.rnu.tn/fr/portail-etudiant,info
-Comment accéder à la bibliothèque de l'ISET?,Visitez la page de la bibliothèque pour les informations d'accès.,Services,fr,https://isetsf.rnu.tn/fr/bibliotheque,info
-How can I access the ISET Sfax library?,Find library access details on the library page.,Services,en,https://isetsf.rnu.tn/fr/bibliotheque,info
-Quels sont les critères d'admission à l'ISET?,Consultez les critères sur la page des admissions.,Admissions,fr,https://isetsf.rnu.tn/fr/admissions,info
-What are the admission requirements for ISET Sfax?,Review the admission criteria on the admissions page.,Admissions,en,https://isetsf.rnu.tn/fr/admissions,info
-Comment s'inscrire à un club étudiant?,Inscrivez-vous via la page des clubs étudiants.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/clubs,info
-How do I join a student club at ISET Sfax?,Sign up through the student clubs page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/clubs,info
-Quelles sont les entreprises partenaires de l'ISET?,Découvrez les partenaires sur la page entreprise.,Entreprise,fr,https://isetsf.rnu.tn/fr/partenaires-entreprise,info
-What companies partner with ISET Sfax?,Check the enterprise partners on the dedicated page.,Entreprise,en,https://isetsf.rnu.tn/fr/partenaires-entreprise,info
-Comment obtenir une attestation de réussite?,Demandez votre attestation via le portail étudiant.,Services,fr,https://isetsf.rnu.tn/fr/portail-etudiant,info
-How can I get a certificate of achievement?,Request your certificate through the student portal.,Services,en,https://isetsf.rnu.tn/fr/portail-etudiant,info
-Quels sont les documents requis pour l'inscription?,Consultez la liste des documents sur la page d'inscription.,Inscription,fr,https://isetsf.rnu.tn/fr/inscription,info
-What documents are required for registration?,Check the required documents on the registration page.,Inscription,en,https://isetsf.rnu.tn/fr/inscription,info
-Quelles sont les activités sportives à l'ISET?,Découvrez les activités sportives sur la page de la vie estudiantine.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/vie-estudiantine,info
-What sports activities are available at ISET Sfax?,Explore sports activities on the student life page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/vie-estudiantine,info
-Comment demander une aide financière?,Suivez les démarches sur la page des bourses.,Bourses,fr,https://isetsf.rnu.tn/fr/bourses,info
-How can I apply for financial aid?,Follow the financial aid process on the scholarships page.,Bourses,en,https://isetsf.rnu.tn/fr/bourses,info
-Quels sont les programmes de mastère en informatique?,Consultez les mastères en informatique sur la page des formations.,Formation,fr,https://isetsf.rnu.tn/fr/formation/informatique,info
-What master’s programs are offered in Computer Science?,Check the Computer Science master’s programs on the training page.,Formation,en,https://isetsf.rnu.tn/fr/formation/informatique,info
-Comment participer à un projet de recherche?,Inscrivez-vous via la page des projets de recherche.,Recherche,fr,https://isetsf.rnu.tn/fr/recherche,info
-How can I participate in a research project?,Sign up through the research projects page.,Recherche,en,https://isetsf.rnu.tn/fr/recherche,info
-Quels sont les avantages pour les anciens élèves?,Découvrez les avantages sur la page des alumni.,Alumni,fr,https://isetsf.rnu.tn/fr/alumni,info
-What benefits are available for ISET Sfax alumni?,Check the alumni benefits on the dedicated page.,Alumni,en,https://isetsf.rnu.tn/fr/alumni,info
-Comment organiser un événement étudiant?,Consultez les directives sur la page des manifestations.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/manifestations,info
-How can I organize a student event at ISET Sfax?,Follow the guidelines on the events page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/manifestations,info
-Quelles sont les options de logement pour étudiants?,Consultez les options sur la page de la vie estudiantine.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/vie-estudiantine,info
-What housing options are available for students?,Check the housing options on the student life page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/vie-estudiantine,info
-Comment obtenir un visa pour étudier à l'ISET?,Suivez les démarches sur la page internationale.,International,fr,https://isetsf.rnu.tn/fr/international,info
-How can I get a visa to study at ISET Sfax?,Follow the visa process on the international page.,International,en,https://isetsf.rnu.tn/fr/international,info
-Quels sont les laboratoires de recherche à l'ISET?,Consultez les laboratoires sur la page de recherche.,Recherche,fr,https://isetsf.rnu.tn/fr/recherche,info
-What research labs are at ISET Sfax?,Check the research labs on the research page.,Recherche,en,https://isetsf.rnu.tn/fr/recherche,info
-Comment postuler pour un poste d'enseignant?,Consultez les offres sur la page des carrières.,Entreprise,fr,https://isetsf.rnu.tn/fr/carrieres,info
-How can I apply for a teaching position at ISET Sfax?,Check the job openings on the careers page.,Entreprise,en,https://isetsf.rnu.tn/fr/carrieres,info
-Quelles sont les ressources en ligne pour les étudiants?,Visitez le portail étudiant pour les ressources en ligne.,Services,fr,https://isetsf.rnu.tn/fr/portail-etudiant,info
-What online resources are available for students?,Access online resources through the student portal.,Services,en,https://isetsf.rnu.tn/fr/portail-etudiant,info
-Comment signaler un problème technique?,Contactez le Centre Informatique via la page des services.,Services,fr,https://isetsf.rnu.tn/fr/centre-informatique,assistance
-How can I report a technical issue?,Contact the IT Center through the services page.,Services,en,https://isetsf.rnu.tn/fr/centre-informatique,assistance
-Quelles sont les modalités d'examen à l'ISET?,Consultez les modalités sur la page des examens.,Formation,fr,https://isetsf.rnu.tn/fr/examens,info
-What are the examination policies at ISET Sfax?,Check the examination policies on the exams page.,Formation,en,https://isetsf.rnu.tn/fr/examens,info
-Comment obtenir un relevé de notes?,Demandez votre relevé via le portail étudiant.,Services,fr,https://isetsf.rnu.tn/fr/portail-etudiant,info
-How can I get a transcript of records?,Request your transcript through the student portal.,Services,en,https://isetsf.rnu.tn/fr/portail-etudiant,info
-Quels sont les partenariats industriels de l'ISET?,Découvrez les partenariats industriels sur la page entreprise.,Entreprise,fr,https://isetsf.rnu.tn/fr/partenaires-entreprise,info
-What industrial partnerships does ISET Sfax have?,Check the industrial partnerships on the enterprise page.,Entreprise,en,https://isetsf.rnu.tn/fr/partenaires-entreprise,info
-Comment demander une lettre de recommandation?,Contactez vos professeurs via le portail étudiant.,Services,fr,https://isetsf.rnu.tn/fr/portail-etudiant,demande
-How can I request a letter of recommendation?,Contact your professors through the student portal.,Services,en,https://isetsf.rnu.tn/fr/portHHow can I request a letter of recommendation?,Contact your professors through the student portal.,Services,en,https://isetsf.rnu.tn/fr/portail-etudiant,demande
-Quelles sont les opportunités de formation continue?,Consultez les programmes sur la page de formation continue.,Formation,fr,https://isetsf.rnu.tn/fr/formation-continue,info
-What continuing education programs are available?,Check the continuing education programs on the dedicated page.,Formation,en,https://isetsf.rnu.tn/fr/formation-continue,info
-Comment s'inscrire à une formation à distance?,Suivez les étapes sur la page de formation à distance.,Formation,fr,https://isetsf.rnu.tn/fr/formation-distance,info
-How can I enroll in an online training program?,Follow the steps on the online training page.,Formation,en,https://isetsf.rnu.tn/fr/formation-distance,info
-Quelles sont les conférences organisées à l'ISET?,Consultez le calendrier des conférences sur la page des événements.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/manifestations,info
-What conferences are organized at ISET Sfax?,Check the conference schedule on the events page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/manifestations,info
-Quels sont les prérequis pour un mastère à l'ISET?,Consultez les prérequis sur la page de candidature au mastère.,Formation,fr,https://isetsf.rnu.tn/fr/candidature-premiere-annee-mastere,info
-What are the prerequisites for a master’s at ISET Sfax?,Review the prerequisites on the master’s application page.,Formation,en,https://isetsf.rnu.tn/fr/candidature-premiere-annee-mastere,info
-Comment trouver un stage à l'international?,Consultez les opportunités sur la page internationale.,International,fr,https://isetsf.rnu.tn/fr/international,info
-How can I find an international internship?,Check international opportunities on the international page.,International,en,https://isetsf.rnu.tn/fr/international,info
-Quels sont les services de santé pour les étudiants?,Visitez la page de la vie estudiantine pour les services de santé.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/vie-estudiantine,info
-What health services are available for students?,Check health services on the student life page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/vie-estudiantine,info
-Comment obtenir une certification professionnelle?,Consultez les programmes sur la page de formation continue.,Formation,fr,https://isetsf.rnu.tn/fr/formation-continue,info
-How can I get a professional certification?,Follow the certification programs on the continuing education page.,Formation,en,https://isetsf.rnu.tn/fr/formation-continue,info
-Quelles sont les opportunités de bénévolat à l'ISET?,Découvrez les opportunités sur la page de la vie estudiantine.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/vie-estudiantine,info
-What volunteering opportunities are at ISET Sfax?,Explore volunteering options on the student life page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/vie-estudiantine,info
-Comment demander un transfert à l'ISET?,Suivez les démarches sur la page des admissions.,Admissions,fr,https://isetsf.rnu.tn/fr/admissions,info
-How can I apply for a transfer to ISET Sfax?,Follow the transfer process on the admissions page.,Admissions,en,https://isetsf.rnu.tn/fr/admissions,info
-Quels sont les cours en ligne disponibles?,Consultez les cours sur la page de formation à distance.,Formation,fr,https://isetsf.rnu.tn/fr/formation-distance,info
-What online courses are offered at ISET Sfax?,Check the online courses on the online training page.,Formation,en,https://isetsf.rnu.tn/fr/formation-distance,info
-Comment participer à un club sportif?,Inscrivez-vous via la page de la vie estudiantine.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/vie-estudiantine,info
-How can I join a sports club at ISET Sfax?,Sign up through the student life page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/vie-estudiantine,info
-Quelles sont les bourses internationales disponibles?,Consultez les bourses sur la page internationale.,Bourses,fr,https://isetsf.rnu.tn/fr/bourses,info
-What international scholarships are available?,Check international scholarships on the international page.,Bourses,en,https://isetsf.rnu.tn/fr/bourses,info
-Comment accéder aux ressources de la bibliothèque en ligne?,Visitez la page de la bibliothèque pour les ressources numériques.,Services,fr,https://isetsf.rnu.tn/fr/bibliotheque,info
-How can I access the online library resources?,Access digital resources through the library page.,Services,en,https://isetsf.rnu.tn/fr/bibliotheque,info
-Quels sont les partenariats avec des universités étrangères?,Découvrez les partenariats sur la page internationale.,Partenariats,fr,https://isetsf.rnu.tn/fr/partenariats-academique,info
-What partnerships exist with foreign universities?,Check partnerships with foreign universities on the international page.,Partenariats,en,https://isetsf.rnu.tn/fr/partenariats-academique,info
-Comment organiser une visite à l'ISET?,Contactez l'administration via la page de contact.,Contact,fr,https://isetsf.rnu.tn/fr/contact,info
-How can I arrange a visit to ISET Sfax?,Contact the administration through the contact page.,Contact,en,https://isetsf.rnu.tn/fr/contact,info
-Quelles sont les opportunités d'emploi après un diplôme?,Consultez les opportunités sur la page des carrières.,Entreprise,fr,https://isetsf.rnu.tn/fr/carrieres,info
-What job opportunities are available after graduation?,Check job opportunities on the careers page.,Entreprise,en,https://isetsf.rnu.tn/fr/carrieres,info
-Comment s'inscrire à un programme doctoral?,Suivez les étapes sur la page de recherche.,Recherche,fr,https://isetsf.rnu.tn/fr/recherche,info
-How can I enroll in a doctoral program?,Follow the steps on the research page.,Recherche,en,https://isetsf.rnu.tn/fr/recherche,info
-Quels sont les services d'orientation professionnelle?,Consultez les services sur la page des carrières.,Entreprise,fr,https://isetsf.rnu.tn/fr/carrieres,info
-What career guidance services are available?,Check career guidance services on the careers page.,Entreprise,en,https://isetsf.rnu.tn/fr/carrieres,info
-Comment participer à un hackathon à l'ISET?,Inscrivez-vous via la page des manifestations.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/manifestations,info
-How can I participate in a hackathon at ISET Sfax?,Sign up through the events page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/manifestations,info
-Quelles sont les aides pour les étudiants internationaux?,Consultez les aides sur la page internationale.,Bourses,fr,https://isetsf.rnu.tn/fr/bourses,info
-What support is available for international students?,Check support options on the international page.,Bourses,en,https://isetsf.rnu.tn/fr/bourses,info
+question,answer,category,language,url,intent,answer_type
+Quels sont les cours de Génie Civil?,Consultez la page des formations.,Formation,fr,https://isetsf.rnu.tn/fr/formation/genie-civil,info,"text"
+What are the Computer Science courses?,Check the training section.,Formation,en,https://isetsf.rnu.tn/fr/formation/informatique,info,"text"
+Comment s'inscrire à l'ISET?,Suivez les étapes sur la page d'inscription.,Inscription,fr,https://isetsf.rnu.tn/fr/inscription,info,"text"
+Quelles sont les dates d'inscription?,"Désolé, je n’ai pas de réponse pertinente.",Inscription,fr,,info,"text"
+Quelles sont les formations en Sciences Économiques et Gestion?,Consultez la page des licences en Sciences Économiques et Gestion.,Formation,fr,https://isetsf.rnu.tn/fr/formation/sc-eco-et-gestion,info,"text"
+What programs are available in Mechanical Engineering?,Visit the Mechanical Engineering training page.,Formation,en,https://isetsf.rnu.tn/fr/formation/genie-mecanique,info,"text"
+Quels sont les mastères professionnels à l'ISET Sfax?,Découvrez les mastères professionnels sur la page dédiée.,Formation,fr,https://isetsf.rnu.tn/fr/formation/mastere-professionnel,info,"text"
+How can I apply for a professional master’s at ISET Sfax?,Follow the online application process for master’s programs.,Formation,en,https://isetsf.rnu.tn/fr/candidature-premiere-annee-mastere,info,"text"
+Comment faire une pré-inscription en ligne?,Utilisez le site d'inscription à distance pour la pré-inscription.,Inscription,fr,https://isetsf.rnu.tn/fr/inscription,info,"text"
+What is the process for remote registration?,Complete the remote registration on the official platform.,Inscription,en,https://isetsf.rnu.tn/fr/inscription,info,"text"
+Quels sont les clubs étudiants à l'ISET Sfax?,Explorez les clubs et activités sur la page de la vie estudiantine.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/clubs,info,"text"
+What student clubs are there at ISET Sfax?,Check the student life section for club information.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/clubs,info,"text"
+Quels services offre le Centre Informatique?,Le Centre Informatique fournit des ressources et une assistance technique.,Services,fr,https://isetsf.rnu.tn/fr/centre-informatique,info,"text"
+What are the IT services at ISET Sfax?,The IT Center offers computing resources and technical support.,Services,en,https://isetsf.rnu.tn/fr/centre-informatique,info,"text"
+Comment trouver des offres de stage?,Consultez les offres de stage sur la page entreprise.,Entreprise,fr,https://isetsf.rnu.tn/fr/offres-de-stage,info,"text"
+Where can I find internship opportunities?,Visit the enterprise section for internship offers.,Entreprise,en,https://isetsf.rnu.tn/fr/offres-de-stage,info,"text"
+Quels sont les partenariats académiques de l'ISET?,Découvrez les partenariats académiques sur la page dédiée.,Partenariats,fr,https://isetsf.rnu.tn/fr/partenariats-academique,info,"text"
+What academic partnerships does ISET Sfax have?,Check the academic partnerships page for details.,Partenariats,en,https://isetsf.rnu.tn/fr/partenariats-academique,info,"text"
+Quelles sont les conditions pour candidater à un mastère?,Vérifiez les critères sur la page de candidature au mastère.,Formation,fr,https://isetsf.rnu.tn/fr/candidature-premiere-annee-mastere,info,"text"
+What are the requirements for a master’s application?,Review the eligibility criteria on the master’s application page.,Formation,en,https://isetsf.rnu.tn/fr/candidature-premiere-annee-mastere,info,"text"
+Comment contacter l'ISET Sfax?,Utilisez les coordonnées sur la page de contact.,Contact,fr,https://isetsf.rnu.tn/fr/contact,info,"text"
+How can I contact ISET Sfax?,Find contact information on the official contact page.,Contact,en,https://isetsf.rnu.tn/fr/contact,info,"text"
+Quelles sont les manifestations organisées à l'ISET?,Consultez les événements sur la page des manifestations.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/manifestations,info,"text"
+What events are organized at ISET Sfax?,Explore events on the student activities page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/manifestations,info,"text"
+Quels sont les programmes de licence à l'ISET?,Consultez la liste des licences sur la page des formations.,Formation,fr,https://isetsf.rnu.tn/fr/formation/licences,info,"text"
+What undergraduate programs are offered at ISET Sfax?,Check the undergraduate programs on the training page.,Formation,en,https://isetsf.rnu.tn/fr/formation/licences,info,"text"
+Comment obtenir un certificat de scolarité?,Demandez votre certificat via le portail étudiant.,Services,fr,https://isetsf.rnu.tn/fr/portail-etudiant,info,"text"
+How can I get a student certificate?,Request a certificate through the student portal.,Services,en,https://isetsf.rnu.tn/fr/portail-etudiant,info,"text"
+Quels sont les frais d'inscription à l'ISET?,Consultez les frais sur la page des admissions.,Admissions,fr,https://isetsf.rnu.tn/fr/admissions,info,"text"
+What are the tuition fees at ISET Sfax?,Check the tuition fees on the admissions page.,Admissions,en,https://isetsf.rnu.tn/fr/admissions,info,"text"
+Comment candidater pour une bourse?,Suivez les instructions sur la page des bourses.,Bourses,fr,https://isetsf.rnu.tn/fr/bourses,info,"text"
+How do I apply for a scholarship?,Follow the scholarship application process on the dedicated page.,Bourses,en,https://isetsf.rnu.tn/fr/bourses,info,"text"
+Quels sont les programmes d'échange internationaux?,Découvrez les programmes d'échange sur la page internationale.,International,fr,https://isetsf.rnu.tn/fr/international,info,"text"
+What international exchange programs are available?,Check the international programs page for exchange opportunities.,International,en,https://isetsf.rnu.tn/fr/international,info,"text"
+Quelles sont les opportunités de recherche à l'ISET?,Consultez les projets de recherche sur la page dédiée.,Recherche,fr,https://isetsf.rnu.tn/fr/recherche,info,"text"
+What research opportunities are there at ISET Sfax?,Explore research projects on the research page.,Recherche,en,https://isetsf.rnu.tn/fr/recherche,info,"text"
+Comment rejoindre le réseau des anciens élèves?,Inscrivez-vous sur la plateforme des alumni.,Alumni,fr,https://isetsf.rnu.tn/fr/alumni,info,"text"
+How can I join the ISET Sfax alumni network?,Register on the alumni platform.,Alumni,en,https://isetsf.rnu.tn/fr/alumni,info,"text"
+Quels sont les horaires des cours?,Consultez les emplois du temps sur le portail étudiant.,Services,fr,https://isetsf.rnu.tn/fr/portail-etudiant,info,"text"
+What are the class schedules at ISET Sfax?,Check the schedules on the student portal.,Services,en,https://isetsf.rnu.tn/fr/portail-etudiant,info,"text"
+Comment accéder à la bibliothèque de l'ISET?,Visitez la page de la bibliothèque pour les informations d'accès.,Services,fr,https://isetsf.rnu.tn/fr/bibliotheque,info,"text"
+How can I access the ISET Sfax library?,Find library access details on the library page.,Services,en,https://isetsf.rnu.tn/fr/bibliotheque,info,"text"
+Quels sont les critères d'admission à l'ISET?,Consultez les critères sur la page des admissions.,Admissions,fr,https://isetsf.rnu.tn/fr/admissions,info,"text"
+What are the admission requirements for ISET Sfax?,Review the admission criteria on the admissions page.,Admissions,en,https://isetsf.rnu.tn/fr/admissions,info,"text"
+Comment s'inscrire à un club étudiant?,Inscrivez-vous via la page des clubs étudiants.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/clubs,info,"text"
+How do I join a student club at ISET Sfax?,Sign up through the student clubs page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/clubs,info,"text"
+Quelles sont les entreprises partenaires de l'ISET?,Découvrez les partenaires sur la page entreprise.,Entreprise,fr,https://isetsf.rnu.tn/fr/partenaires-entreprise,info,"text"
+What companies partner with ISET Sfax?,Check the enterprise partners on the dedicated page.,Entreprise,en,https://isetsf.rnu.tn/fr/partenaires-entreprise,info,"text"
+Comment obtenir une attestation de réussite?,Demandez votre attestation via le portail étudiant.,Services,fr,https://isetsf.rnu.tn/fr/portail-etudiant,info,"text"
+How can I get a certificate of achievement?,Request your certificate through the student portal.,Services,en,https://isetsf.rnu.tn/fr/portail-etudiant,info,"text"
+Quels sont les documents requis pour l'inscription?,Consultez la liste des documents sur la page d'inscription.,Inscription,fr,https://isetsf.rnu.tn/fr/inscription,info,"text"
+What documents are required for registration?,Check the required documents on the registration page.,Inscription,en,https://isetsf.rnu.tn/fr/inscription,info,"text"
+Quelles sont les activités sportives à l'ISET?,Découvrez les activités sportives sur la page de la vie estudiantine.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/vie-estudiantine,info,"text"
+What sports activities are available at ISET Sfax?,Explore sports activities on the student life page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/vie-estudiantine,info,"text"
+Comment demander une aide financière?,Suivez les démarches sur la page des bourses.,Bourses,fr,https://isetsf.rnu.tn/fr/bourses,info,"text"
+How can I apply for financial aid?,Follow the financial aid process on the scholarships page.,Bourses,en,https://isetsf.rnu.tn/fr/bourses,info,"text"
+Quels sont les programmes de mastère en informatique?,Consultez les mastères en informatique sur la page des formations.,Formation,fr,https://isetsf.rnu.tn/fr/formation/informatique,info,"text"
+What master’s programs are offered in Computer Science?,Check the Computer Science master’s programs on the training page.,Formation,en,https://isetsf.rnu.tn/fr/formation/informatique,info,"text"
+Comment participer à un projet de recherche?,Inscrivez-vous via la page des projets de recherche.,Recherche,fr,https://isetsf.rnu.tn/fr/recherche,info,"text"
+How can I participate in a research project?,Sign up through the research projects page.,Recherche,en,https://isetsf.rnu.tn/fr/recherche,info,"text"
+Quels sont les avantages pour les anciens élèves?,Découvrez les avantages sur la page des alumni.,Alumni,fr,https://isetsf.rnu.tn/fr/alumni,info,"text"
+What benefits are available for ISET Sfax alumni?,Check the alumni benefits on the dedicated page.,Alumni,en,https://isetsf.rnu.tn/fr/alumni,info,"text"
+Comment organiser un événement étudiant?,Consultez les directives sur la page des manifestations.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/manifestations,info,"text"
+How can I organize a student event at ISET Sfax?,Follow the guidelines on the events page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/manifestations,info,"text"
+Quelles sont les options de logement pour étudiants?,Consultez les options sur la page de la vie estudiantine.,Vie estudiantine,fr,https://isetsf.rnu.tn/fr/vie-estudiantine,info,"text"
+What housing options are available for students?,Check the housing options on the student life page.,Vie estudiantine,en,https://isetsf.rnu.tn/fr/vie-estudiantine,info,"text"
+Comment obtenir un visa pour étudier à l'ISET?,Suivez les démarches sur la page internationale.,International,fr,https://isetsf.rnu.tn/fr/international,info,"text"
+How can I get a visa to study at ISET Sfax?,Follow the visa process on the international page.,International,en,https://isetsf.rnu.tn/fr/international,info,"text"
+Quels sont les laboratoires de recherche à l'ISET?,Consultez les laboratoires sur la page de recherche.,Recherche,fr,https://isetsf.rnu.tn/fr/recherche,info,"text"
+What research labs are at ISET Sfax?,Check the research labs on the research page.,Recherche,en,https://isetsf.rnu.tn/fr/recherche,info,"text"
+Comment postuler pour un poste d'enseignant?,Consultez les offres sur la page des carrières.,Entreprise,fr,https://isetsf.rnu.tn/fr/carrieres,info,"text"
+How can I apply for a teaching position at ISET Sfax?,Check the job openings on the careers page.,Entreprise,en,https://isetsf.rnu.tn/fr/carrieres,info,"text"
+Quelles sont les ressources en ligne pour les étudiants?,Visitez le portail étudiant pour les ressources en ligne.,Services,fr,https://isetsf.rnu.tn/fr/portail-etudiant,info,"text"
+What online resources are available for students?,Access online resources through the student portal.,Services,en,https://isetsf.rnu.tn/fr/portail-etudiant,info,"text"
+Comment signaler un problème technique?,Contactez le Centre Informatique via la page des services.,Services,fr,https://isetsf.rnu.tn/fr/centre-informatique,assistance,"text"
+How can I report a technical issue?,Contact the IT Center through the services page.,Services,en,https://isetsf.rnu.tn/fr/centre-informatique,assistance,"text"
+Quelles sont les modalités d'examen à l'ISET?,Consultez les modalités sur la page des examens.,Formation,fr,https://isetsf.rnu.tn/fr/examens,info,"text"
+What are the examination policies at ISET Sfax?,Check the examination policies on the exams page.,Formation,en,https://isetsf.rnu.tn/fr/examens,info,"text"
+Comment obtenir un relevé de notes?,Demandez votre relevé via le portail étudiant.,Services,fr,https://isetsf.rnu.tn/fr/portail-etudiant,info,"text"
+How can I get a transcript of records?,Request your transcript through the student portal.,Services,en,https://isetsf.rnu.tn/fr/portail-etudiant,info,"text"
+Quels sont les partenariats industriels de l'ISET?,Découvrez les partenariats industriels sur la page entreprise.,Entreprise,fr,https://isetsf.rnu.tn/fr/partenaires-entreprise,info,"text"
+What industrial partnerships does ISET Sfax have?,Check the industrial partnerships on the enterprise page.,Entreprise,en,https://isetsf.rnu.tn/fr/partenaires-entreprise,info,"text"
+Comment demander une lettre de recommandation?,Contactez vos professeurs via le portail étudiant.,Services,fr,https://isetsf.rnu.tn/fr/portail-etudiant,demande,"text"
+présentation du département technologies de l'informatique,Technologies de l'Informatique Directeur du département : Mohamed ELLEUCH Mohamed.elleuch@sfax.r-iset.tn Secrétaire du Département : Mme Amel BOURICHA Nous Joindre : Email : elleuch_med@yahoo.fr Tél: 74431425/ 74431182 Présentation du Département Le Département Technologies de l'Informatique de l'ISET de Sfax est un département créé en septembre 2008 suite à la fusion des départements Informatique et STID (Statistique et Traitement Informatique de Données). Il a une capacité d'accueil de 800 étu...,Services,fr,https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique,
+qui est le responsable du tronc commun en informatique ?,Le responsable du tronc commun en informatique est M. Nader Frikha.,Pédagogique,fr,https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique,
+qui gère le parcours DSI à l'ISET Sfax ?,Le parcours DSI est géré par Mme Afef Samet.,Pédagogique,fr,https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique,
+qui est le coordinateur du master DSIR ?,Le coordinateur du master DSIR est M. Faiez Charfi.,Pédagogique,fr,https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique,
+quels sont les parcours de la licence en technologies de l'informatique ?,"Les parcours de la licence en technologies de l'informatique sont : Développement des Systèmes Informatiques (DSI), Réseaux et Systèmes Informatiques (RSI), et Systèmes Embarqués et Mobiles (SEM).",Pédagogique,fr,https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique,
+quels sont les masters proposés en informatique à l'ISET Sfax ?,"Les masters proposés sont : MASTER DSIR (Développement des Systèmes d’Informations et Réseaux) avec les spécialités RINT et GLNT, et MASTER ASSC (Administration des Systèmes, Sécurité et Cloud Computing) avec les spécialités Sécurité Informatique et Cloud Computing.",Pédagogique,fr,https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique,
+qui est responsable du parcours RSI ?,Le responsable du parcours RSI est M. Habib Chakchouk.,Pédagogique,fr,https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique,
+qui coordonne le master ASSC à l'ISET Sfax ?,Le coordinateur du master ASSC est M. Hassan Ben Ayed.,Pédagogique,fr,https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique,
+quelles sont les spécialités du master DSIR ?,Les spécialités du master DSIR sont : Réseaux Informatiques & Nouvelles Technologies (RINT) et Génie Logiciel & Nouvelles Technologies (GLNT).,Pédagogique,fr,https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique,
+qui est responsable du parcours SEM en informatique ?,Le responsable du parcours SEM est M. Hichem Ben Nasr.,Pédagogique,fr,https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique,
+actualités,Contactez-nous Formations Espace Extranet Espace Extranet menu,Services,fr,https://isetsf.rnu.tn/fr,
+Appels d'offres ?,ISET SFAX - Appels d'offres Contactez-nous Formations Espace Extranet Espace Extranet menu Appels d'offres Actualités Appels d’offres et consultations Appels d'offres Recevez les dernières mises à jour et offres. S'abonner Route de Mahdia Km 2.5 BP 88 A - 3099 Sfax (+216) 74 431 425 (+216) 74 431 673 iset.sfax@sfax.r-iset.tn Institut Message du Directeur Organigramme Conseil Scientifique et Technologique Galerie des photos Etudiants Formation Clubs Manifestations Inscription à distance Entrepris...,iset-sfax,fr,https://isetsf.rnu.tn/fr/actualites/appels-doffres-et-consultations,faq,"text"
+ISET SFAX  Organigramme ?,ISET SFAX - Organigramme Contactez-nous Formations Espace Extranet Espace Extranet menu Date de dernière mise à jour: samedi 10 mai 2025 Nombre de vues: 1483 Organigramme Institut Organigramme Institut Message du Directeur Présentation Organigramme Conseil Scientifique et Technologique Départements Sc. Eco. et Gestion Technologies de l'Informatique Génie des Procédés Génie Civil Génie Mécanique Associations Association de l'Innovation et la Technologie « AIT » Association de Recherche et Dévelop...,iset-sfax,fr,https://isetsf.rnu.tn/fr/institut/organigramme,faq,"text"
+Présentation du Département technologies de l'informatique,Contactez-nous Formations Espace Extranet Espace Extranet menu,Services,en,https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique,
+"appel candidature du mastère en ASSCC","images/appel_candidature_mastère_ASSCC.jpg","Mastère","fr","https://isetsf.rnu.tn/fr/candidature-premiere-annee-mastere","informative","image"

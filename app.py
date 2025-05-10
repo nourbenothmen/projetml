@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify ,send_from_directory
 from flask_cors import CORS
 from extensions import db
 from models import User
@@ -7,6 +7,7 @@ from chatbot_model import find_best_match
 from langdetect import detect
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics.pairwise import cosine_similarity
 import csv
 import jwt
 import datetime
@@ -15,24 +16,122 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import re
 import os
 from typing import Dict, List, Tuple, Optional
+import requests
+from bs4 import BeautifulSoup
 
+# --- Nouvelle fonction pour charger les données de iset_sfax_qna.csv ---
+def load_iset_sfax_qna(app_instance):
+    """
+    Charge les questions et réponses de iset_sfax_qna.csv dans un dictionnaire.
+    Structure : {langue: {question: {'answer': ..., 'category': ..., 'url': ..., 'intent': ...}}}
+    """
+    qna_path = 'iset_sfax_qna.csv'  # Chemin du fichier iset_sfax_qna.csv
+    app_instance.iset_sfax_qna = {'fr': {}, 'en': {}}  # Initialisation du dictionnaire
+
+    if not os.path.exists(qna_path):
+        print(f"Le fichier {qna_path} n'existe pas. Aucune donnée supplémentaire ne sera chargée.")
+        return
+
+    try:
+        with open(qna_path, newline='', encoding='utf-8') as csvfile:
+            reader = csv.DictReader(csvfile)
+            expected_fieldnames = ['question', 'answer', 'category', 'language', 'url', 'intent']
+            if not reader.fieldnames or set(reader.fieldnames) != set(expected_fieldnames):
+                raise ValueError(f"Le fichier CSV {qna_path} doit avoir les en-têtes suivants : {expected_fieldnames}")
+
+            for row in reader:
+                try:
+                    question = row['question'].strip()
+                    lang = row['language'].strip()
+                    answer = row['answer'].strip()
+                    category = row['category'].strip()
+                    url = row.get('url', '').strip()
+                    intent = row.get('intent', '').strip()
+
+                    if not question or not answer or not category or not lang:
+                        print(f"Ignoré: Ligne incomplète dans iset_sfax_qna.csv - {row}")
+                        continue
+
+                    if lang not in ['fr', 'en']:
+                        print(f"Ignoré: Langue invalide '{lang}' pour question dans iset_sfax_qna.csv: {question}")
+                        continue
+
+                    app_instance.iset_sfax_qna[lang][question] = {
+                        'answer': answer,
+                        'category': category,
+                        'url': url,
+                        'intent': intent
+                    }
+                    print(f"Chargé dans iset_sfax_qna[{lang}]: {question}")
+                except KeyError as e:
+                    print(f"Erreur: Clé manquante {e} dans la ligne de iset_sfax_qna.csv: {row}")
+                    continue
+                except Exception as e:
+                    print(f"Erreur inattendue dans la ligne de iset_sfax_qna.csv: {row}, erreur: {str(e)}")
+                    continue
+
+        print(f"Total questions chargées depuis iset_sfax_qna.csv: fr={len(app_instance.iset_sfax_qna['fr'])}, en={len(app_instance.iset_sfax_qna['en'])}")
+    except Exception as e:
+        print(f"Erreur lors du chargement de iset_sfax_qna.csv: {str(e)}")
+
+# --- Fonction pour trouver une correspondance dans iset_sfax_qna.csv ---
+def find_in_iset_sfax_qna(query: str, language: str, app_instance) -> Tuple[Optional[str], Optional[str], Optional[str], Optional[str], float]:
+    """
+    Recherche la question la plus similaire dans iset_sfax_qna.csv.
+    Retourne (answer, category, url, intent, similarity_score).
+    """
+    if language not in app_instance.iset_sfax_qna or not app_instance.iset_sfax_qna[language]:
+        print(f"Aucune donnée disponible dans iset_sfax_qna pour la langue {language}")
+        return None, None, None, None, 0.0
+
+    questions = list(app_instance.iset_sfax_qna[language].keys())
+    if not questions:
+        print(f"Aucune question trouvée dans iset_sfax_qna pour la langue {language}")
+        return None, None, None, None, 0.0
+
+    # Créer un vectorizer temporaire pour iset_sfax_qna si nécessaire
+    if not hasattr(app_instance, 'iset_sfax_vectorizers'):
+        app_instance.iset_sfax_vectorizers = {}
+        app_instance.iset_sfax_tfidf_matrices = {}
+
+    if language not in app_instance.iset_sfax_vectorizers:
+        app_instance.iset_sfax_vectorizers[language], app_instance.iset_sfax_tfidf_matrices[language] = create_tfidf_vectors(
+            questions, language=language
+        )
+        print(f"TF-IDF créé pour iset_sfax_qna[{language}]: {app_instance.iset_sfax_tfidf_matrices[language].shape}")
+
+    # Calculer la similarité
+    processed_query = preprocess_text(query, language=language)
+    query_vector = app_instance.iset_sfax_vectorizers[language].transform([processed_query])
+    similarities = cosine_similarity(query_vector, app_instance.iset_sfax_tfidf_matrices[language])[0]
+    best_idx = similarities.argmax()
+    best_score = similarities[best_idx]
+    best_question = questions[best_idx]
+
+    print(f"Meilleure correspondance dans iset_sfax_qna: question='{best_question}', score={best_score}")
+
+    if best_score >= 0.8:  # Seuil pour considérer une correspondance valide
+        data = app_instance.iset_sfax_qna[language][best_question]
+        return data['answer'], data['category'], data['url'], data['intent'], best_score
+    else:
+        print(f"Score de similarité trop bas ({best_score}) dans iset_sfax_qna")
+        return None, None, None, None, 0.0
+
+# --- Fonctions existantes (non modifiées) ---
 def load_data_from_csv(app_instance):
-    expected_fieldnames = ['question', 'answer', 'category', 'language', 'url', 'intent']
+    expected_fieldnames = ['question', 'answer', 'category', 'language', 'url', 'intent', 'answer_type']
     csv_path = app_instance.config['CSV_PATH']
     
-    # Vérifier que le fichier CSV existe
     if not os.path.exists(csv_path):
         raise FileNotFoundError(f"Le fichier {csv_path} n'existe pas.")
     
-    # Initialiser les structures de données
     app_instance.questions = {'fr': [], 'en': []}
     app_instance.answers = {'fr': [], 'en': []}
-    seen_questions = set()  # Pour éviter les duplications
+    seen_questions = set()
     
     try:
         with open(csv_path, newline='', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
-            # Vérifier les en-têtes
             if not reader.fieldnames or set(reader.fieldnames) != set(expected_fieldnames):
                 raise ValueError(f"Le fichier CSV {csv_path} doit avoir les en-têtes suivants : {expected_fieldnames}")
             
@@ -44,6 +143,7 @@ def load_data_from_csv(app_instance):
                     category = row['category'].strip()
                     url = row.get('url', '').strip()
                     intent = row.get('intent', '').strip()
+                    answer_type = row.get('answer_type', 'text').strip()  # Par défaut, "text" si non spécifié
                     
                     if not question or not answer or not category or not lang:
                         print(f"Ignoré: Ligne incomplète - {row}")
@@ -53,11 +153,16 @@ def load_data_from_csv(app_instance):
                         print(f"Ignoré: Langue invalide '{lang}' pour question: {question}")
                         continue
                     
+                    if answer_type not in ['text', 'image']:
+                        print(f"Ignoré: Type de réponse invalide '{answer_type}' pour question: {question}")
+                        continue
+                    
                     if question not in seen_questions:
                         seen_questions.add(question)
                         app_instance.questions[lang].append(question)
-                        app_instance.answers[lang].append((answer, url, len(app_instance.answers[lang])))
-                        print(f"Chargé: {question} (lang: {lang}, category: {category}, url: {url})")
+                        # Stocker answer_type avec la réponse
+                        app_instance.answers[lang].append((answer, url, len(app_instance.answers[lang]), answer_type))
+                        print(f"Chargé: {question} (lang: {lang}, category: {category}, url: {url}, answer_type: {answer_type})")
                     else:
                         print(f"Ignoré: Question en double: {question}")
                 except KeyError as e:
@@ -68,8 +173,6 @@ def load_data_from_csv(app_instance):
                     continue
     
         print(f"Total questions chargées: fr={len(app_instance.questions['fr'])}, en={len(app_instance.questions['en'])}")
-        print(f"Questions fr: {app_instance.questions['fr']}")
-        print(f"Questions en: {app_instance.questions['en']}")
     
     except UnicodeDecodeError:
         print(f"Erreur: Problème d'encodage dans {csv_path}. Assurez-vous qu'il est en UTF-8 sans BOM.")
@@ -78,7 +181,6 @@ def load_data_from_csv(app_instance):
         print(f"Erreur lors du chargement de {csv_path}: {str(e)}")
         raise
     
-    # Créer les vecteurs TF-IDF
     for lang in ['fr', 'en']:
         if app_instance.questions[lang]:
             try:
@@ -91,7 +193,6 @@ def load_data_from_csv(app_instance):
                 raise
         else:
             print(f"Aucune question pour la langue {lang}")
-
 def train_category_classifier(app):
     questions = []
     categories = []
@@ -119,7 +220,6 @@ def train_category_classifier(app):
             app.category_classifier = MultinomialNB()
             app.category_classifier.fit(X, categories)
             print(f"Classificateur de catégories entraîné avec succès. Catégories: {set(categories)}")
-            print(f"Nombre de questions: {len(questions)}")
         else:
             print("Aucune donnée de catégorie disponible pour l'entraînement.")
             app.category_classifier = None
@@ -139,26 +239,59 @@ def predict_category(query, vectorizer, classifier, language='fr'):
         print(f"Erreur lors de la prédiction de catégorie pour '{query}': {str(e)}")
         return 'Inconnu'
 
-def save_to_csv(question: str, answer: str, category: str, language: str, url: str = '', intent: str = ''):
+def save_to_csv(question: str, answer: str, category: str, language: str, url: str = '', intent: str = '', answer_type: str = 'text'):
     try:
+        # Validate inputs
+        if not all([question, answer, category, language]):
+            raise ValueError(f"Champ manquant: question={question}, answer={answer}, category={category}, language={language}")
+        if language not in ['fr', 'en']:
+            raise ValueError(f"Langue invalide: {language}")
+        if answer_type not in ['text', 'image']:
+            raise ValueError(f"Type de réponse invalide: {answer_type}")
+        
+        # Vérifier si la question existe déjà pour éviter les doublons
+        if question in app.questions[language]:
+            print(f"Question déjà existante dans app.questions[{language}]: {question}, mise à jour ignorée")
+            return
+        
+        # Read existing rows
         rows = []
         with open(app.config['CSV_PATH'], newline='', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
-            rows = list(reader)
-        rows.append({'question': question, 'answer': answer, 'category': category, 'language': language, 'url': url, 'intent': intent})
+            fieldnames = reader.fieldnames
+            if not fieldnames or set(fieldnames) != set(['question', 'answer', 'category', 'language', 'url', 'intent', 'answer_type']):
+                raise ValueError(f"En-têtes CSV invalides: {fieldnames}")
+            for row in reader:
+                sanitized_row = {k: row.get(k, '') for k in fieldnames}
+                rows.append(sanitized_row)
+        
+        # Append new row
+        new_row = {
+            'question': question,
+            'answer': answer,
+            'category': category,
+            'language': language,
+            'url': url,
+            'intent': intent,
+            'answer_type': answer_type  # Ajout du champ answer_type
+        }
+        print(f"Écriture dans CSV: {new_row}")
+        rows.append(new_row)
+        
+        # Write back to CSV
         with open(app.config['CSV_PATH'], 'w', newline='', encoding='utf-8') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=['question', 'answer', 'category', 'language', 'url', 'intent'])
+            writer = csv.DictWriter(csvfile, fieldnames=['question', 'answer', 'category', 'language', 'url', 'intent', 'answer_type'])
             writer.writeheader()
             writer.writerows(rows)
-        lang = language
-        app.questions[lang].append(question)
-        app.answers[lang].append((answer, url, len(app.answers[lang])))
-        app.vectorizers[lang], app.tfidf_matrices[lang] = create_tfidf_vectors(app.questions[lang], language=lang)
-        print(f"Sauvegardé: {question} (lang: {lang}, category: {category})")
+        
+        # Update app state
+        app.questions[language].append(question)
+        app.answers[language].append((answer, url, len(app.answers[language]), answer_type))
+        app.vectorizers[language], app.tfidf_matrices[language] = create_tfidf_vectors(app.questions[language], language=language)
+        print(f"Sauvegardé: {question} (lang: {language}, category: {category}, answer_type: {answer_type})")
     except Exception as e:
         print(f"Erreur lors de la sauvegarde dans le CSV: {str(e)}")
         raise
-
 def append_feedback(question: str, answer_id: int, feedback: str, similarity_score: Optional[float] = None):
     try:
         fieldnames = ['question', 'answer_id', 'feedback', 'timestamp', 'similarity_score']
@@ -219,6 +352,151 @@ def retrain_intent_classifier():
         print(f"Erreur lors du réentraînement du modèle d'intention: {str(e)}")
         raise
 
+def map_query_to_url(query: str) -> str:
+    query_lower = query.lower()
+    url_mappings = {
+        'inscription': 'https://isetsf.rnu.tn/fr/inscription',
+        'formation': 'https://isetsf.rnu.tn/fr/formation',
+        'cours': 'https://isetsf.rnu.tn/fr/formation',
+        'licence': 'https://isetsf.rnu.tn/fr/formation/licences',
+        'mastère': 'https://isetsf.rnu.tn/fr/candidature-premiere-annee-mastere',
+        'club': 'https://isetsf.rnu.tn/fr/clubs',
+        'stage': 'https://isetsf.rnu.tn/fr/offres-de-stage',
+        'bourse': 'https://isetsf.rnu.tn/fr/bourses',
+        'international': 'https://isetsf.rnu.tn/fr/international',
+        'recherche': 'https://isetsf.rnu.tn/fr/recherche',
+        'bibliothèque': 'https://isetsf.rnu.tn/fr/bibliotheque',
+        'admission': 'https://isetsf.rnu.tn/fr/admissions',
+        'contact': 'https://isetsf.rnu.tn/fr/contact',
+        'adresse': 'https://isetsf.rnu.tn/fr/contact',
+        'alumni': 'https://isetsf.rnu.tn/fr/alumni',
+        'manifestation': 'https://isetsf.rnu.tn/fr/manifestations',
+        'vie estudiantine': 'https://isetsf.rnu.tn/fr/vie-estudiantine',
+        'partenaires professionnels': 'https://isetsf.rnu.tn/fr/actualites/partenaires-professionnels',
+        'informatique': 'https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique',
+        'génie civil': 'https://isetsf.rnu.tn/fr/institut/departements/genie-civil',
+        'comité pédagogique': 'https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique',
+        'présentation département': 'https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique'
+    }
+    if 'directeur' in query_lower and 'informatique' in query_lower:
+        print("URL mappé pour 'directeur informatique': https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique")
+        return 'https://isetsf.rnu.tn/fr/institut/departements/technologies-de-l-informatique'
+    for keyword, url in url_mappings.items():
+        if keyword in query_lower:
+            print(f"URL mappé pour '{keyword}': {url}")
+            return url
+    print("Aucun mot-clé trouvé, utilisation de l'URL par défaut")
+    return 'https://isetsf.rnu.tn/fr'
+
+def scrape_iset_website(url: str, query: str, language: str = 'fr') -> Tuple[Optional[str], str]:
+    try:
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+        print(f"Tentative de scraping de l'URL: {url}")
+        response = requests.get(url, headers=headers, timeout=5)
+        response.raise_for_status()
+        response.encoding = 'utf-8'
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        texts = []
+        committee_texts = set()
+        committee_keywords = ['comité pédagogique', 'responsable', 'coordinateur']
+        exclude_keywords = ['secrétaire', 'directeur']
+        
+        for elem in soup.find_all(['p', 'div', 'ul', 'li', 'table', 'tr', 'td']):
+            text = ' '.join(elem.stripped_strings)
+            text = re.sub(r'\s+', ' ', text).strip()
+            if len(text) > 10 and any(keyword in text.lower() for keyword in committee_keywords) and not any(exclude_keyword in text.lower() for exclude_keyword in exclude_keywords):
+                committee_texts.add(text)
+                texts.append(text)
+                print(f"Texte trouvé pour comité pédagogique: {text[:100]}...")
+            elif len(text) > 10:
+                texts.append(text)
+        
+        if not texts:
+            print(f"Aucun texte pertinent trouvé sur {url}")
+            return ("Les membres du comité pédagogique du département Technologies de l'Informatique ne sont pas indiqués sur la page. Veuillez contacter le département au +216 74 431 425 pour plus d'informations.", url)
+        
+        print(f"Textes extraits avant filtrage: {[t[:100] + '...' for t in texts]}")
+        
+        if not app.vectorizers.get(language):
+            print(f"Erreur: Vectorizer non initialisé pour la langue {language}")
+            return ("Erreur interne: Vectorizer non initialisé.", url)
+        
+        processed_query = preprocess_text(query, language=language)
+        query_vector = app.vectorizers[language].transform([processed_query])
+        text_vectors = app.vectorizers[language].transform([preprocess_text(t, language) for t in texts])
+        similarities = cosine_similarity(query_vector, text_vectors)[0]
+        best_idx = similarities.argmax()
+        
+        answer = None
+        if 'comité pédagogique' in query.lower():
+            all_names = set()  # Utiliser un set pour éviter les doublons
+            for text in committee_texts:
+                print(f"Analyse du texte pour extraction des noms: {text}")
+                # Extraire les noms complets, ignorer les rôles
+                name_matches = re.findall(r'(?:Mme\.?|M\.)\s+([A-Z][a-zA-Z]*(?:\s+[A-Z][a-zA-Z]*)+)(?:\s+(?:Responsable|Coordinateur|MASTER\s+[A-Z]+)?)?', text)
+                for name, *_ in name_matches:
+                    print(f"Nom extrait: {name}")
+                    if 'Amel BOURICHA' not in name and 'Mohamed ELLEUCH' not in name:
+                        all_names.add(name.strip())
+            
+            if all_names:
+                formatted_names = []
+                for name in sorted(all_names):
+                    title = 'Mme' if 'Afef' in name else 'M.'
+                    formatted_names.append(f"{title} {name}")
+                answer = "Membres du comité pédagogique : " + ", ".join(formatted_names)
+                print(f"Réponse construite à partir des noms extraits: {answer}")
+            else:
+                print(f"Aucun nom propre détecté dans les textes du comité")
+                answer = ("Les membres du comité pédagogique du département Technologies de l'Informatique ne sont pas indiqués sur la page. Veuillez contacter le département au +216 74 431 425 pour plus d'informations.")
+        
+        else:
+            answer = texts[best_idx][:500] + '...' if len(texts[best_idx]) > 500 else texts[best_idx]
+        
+        print(f"Réponse extraite de {url}: {answer}")
+        return answer, url
+    except Exception as e:
+        print(f"Erreur lors du scraping de {url}: {str(e)}")
+        return None, url
+
+def detect_language(text: str) -> str:
+    try:
+        return detect(text)
+    except Exception as e:
+        print(f"Erreur lors de la détection de la langue: {str(e)}")
+        return 'fr'  # Langue par défaut
+
+# Définitions minimales pour les fonctions manquantes
+def predict_intent(query: str, language: str) -> Optional[str]:
+    print(f"predict_intent non implémenté, retour de None pour query: {query}")
+    return None
+
+def extract_entities(query: str, language: str) -> dict:
+    entities = {'course': 'informatique'} if 'informatique' in query.lower() else {}
+    print(f"Entités extraites: {entities}")
+    return entities
+
+def load_questions(language: str) -> dict:
+    questions_dict = {}
+    if language in app.questions:
+        for idx, question in enumerate(app.questions[language]):
+            answer, url, answer_id, answer_type = app.answers[language][idx]  # Ajout de answer_type
+            questions_dict[question] = {'answer': answer, 'url': url, 'id': answer_id, 'answer_type': answer_type}
+    print(f"Questions chargées pour {language}: {list(questions_dict.keys())}")
+    return questions_dict
+def find_most_similar_question(query: str, questions: dict, language: str) -> Tuple[int, float]:
+    if not questions or app.vectorizers.get(language) is None or app.tfidf_matrices.get(language) is None:
+        print("Aucune question ou vectorizer/matrice non initialisé, retour de (-1, 0.0)")
+        return -1, 0.0
+    question_texts = list(questions.keys())
+    query_vector = app.vectorizers[language].transform([query])
+    similarities = cosine_similarity(query_vector, app.tfidf_matrices[language])[0]
+    best_idx = similarities.argmax()
+    best_score = similarities[best_idx]
+    print(f"Meilleure correspondance: index={best_idx}, score={best_score}")
+    return best_idx, best_score
+
 def create_app():
     app = Flask(__name__, template_folder='templates')
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://chatbot-nour:nour782@localhost:5432/chatbot-iset'
@@ -239,16 +517,19 @@ def create_app():
     app.category_vectorizer: Optional[TfidfVectorizer] = None
     app.category_classifier: Optional[MultinomialNB] = None
     app.similarity_threshold: float = 0.5
+    app.iset_sfax_qna: Dict[str, Dict[str, Dict]] = {'fr': {}, 'en': {}}  # Nouvelle structure pour iset_sfax_qna
 
     try:
         load_data_from_csv(app)
         train_category_classifier(app)
+        load_iset_sfax_qna(app)  # Charger les données de iset_sfax_qna.csv
     except Exception as e:
         print(f"Erreur lors de l'initialisation de l'application: {str(e)}")
         raise
 
     print(f"Questions chargées: {app.questions}")
     print(f"Réponses chargées: {app.answers}")
+    print(f"Données iset_sfax_qna chargées: {app.iset_sfax_qna}")
 
     def token_required(f):
         @wraps(f)
@@ -326,120 +607,126 @@ def create_app():
             return jsonify({'error': f'Erreur lors de la connexion: {str(e)}'}), 400
 
     @app.route('/api/ask', methods=['POST'])
-    @token_required
-    def ask_question(current_user):
+    def ask():
         try:
+            request_id = datetime.datetime.utcnow().isoformat()
+            print(f"Nouvelle requête reçue à /api/ask (ID: {request_id}): question='{request.get_json().get('question', '')}'")
+    
             data = request.get_json()
-            print("Données reçues:", data)
-            if not data or 'question' not in data:
-                return jsonify({'error': 'Question requise'}), 400
-            question_text = data.get('question')
-            preferred_lang = data.get('language', 'fr')
-            print(f"Question reçue: {question_text}, Langue préférée: {preferred_lang}")
-            if not isinstance(question_text, str):
-                return jsonify({'error': f'Question doit être une chaîne, reçu: {type(question_text)}'}), 400
-
-            try:
-                detected_lang = detect(question_text)
-            except Exception as e:
-                print(f"Erreur lors de la détection de langue: {e}")
-                detected_lang = 'fr'
-            question_lang = 'en' if detected_lang.startswith('en') else 'fr'
-            if preferred_lang in ['fr', 'en'] and preferred_lang != question_lang:
-                question_lang = preferred_lang
-            print(f"Langue détectée: {detected_lang}, Langue finale: {question_lang}")
-
-            processed_query = preprocess_text(question_text, language=question_lang)
+            if not data:
+                return jsonify({'error': 'No JSON data provided'}), 400
+    
+            question = data.get('question', '').strip()
+            language = data.get('language', 'fr').strip()
+    
+            if not question:
+                return jsonify({'error': 'Question is required'}), 400
+    
+            print(f"Question reçue: {question}, Langue préférée: {language}")
+    
+            detected_language = detect_language(question)
+            final_language = language if language in ['fr', 'en', 'ar'] else detected_language
+            print(f"Langue détectée: {detected_language}, Langue finale: {final_language}")
+    
+            processed_query = preprocess_text(question, language=final_language)
             print(f"Query prétraitée: {processed_query}")
-            
-            predicted_category = None
-            if app.category_classifier and app.category_vectorizer:
-                predicted_category = predict_category(processed_query, app.category_vectorizer, app.category_classifier, question_lang)
-                print(f"Catégorie prédite: {predicted_category}")
-            
-            predicted_intent = (app.intent_classifier.predict(app.intent_vectorizer.transform([processed_query]))[0]
-                              if app.intent_classifier and app.intent_vectorizer else None)
-            print(f"Intention prédite: {predicted_intent}")
-            entities = {}
-            courses = r'\b(Génie Civil|Informatique|Génie Mécanique|Programmation|Algorithmes)\b'
-            if re.search(courses, question_text, re.IGNORECASE):
-                entities['course'] = re.search(courses, question_text, re.IGNORECASE).group()
+    
+            category = predict_category(processed_query, app.category_vectorizer, app.category_classifier, final_language)
+            print(f"Catégorie prédite pour '{processed_query}': {category}")
+    
+            intent = predict_intent(processed_query, final_language)
+            print(f"Intention prédite: {intent}")
+    
+            entities = extract_entities(processed_query, final_language)
             print(f"Entités détectées: {entities}")
+    
+            available_questions = load_questions(final_language)
+            print(f"Questions disponibles pour {final_language}: {list(available_questions.keys())}")
+    
+            best_index, similarity_score = find_most_similar_question(processed_query, available_questions, final_language)
+            print(f"Meilleur index: {best_index}, Score de similarité: {similarity_score}")
+    
+            similarity_threshold = 0.9
+            if 'comité pédagogique' in question.lower():
+                similarity_threshold = 0.95
+            print(f"Seuil de similarité: {similarity_threshold}")
+    
+            answer_id = None
+            answer = None
+            url = None
+            answer_type = 'text'  # Par défaut
+    
+            # Traitement de la réponse
+            if best_index != -1 and similarity_score >= similarity_threshold:
+                similar_question = list(available_questions.keys())[best_index]
+                print(f"Question correspondante: {similar_question}")
+                answer_data = available_questions[similar_question]
+                answer = answer_data['answer']
+                url = answer_data.get('url', '')
+                answer_id = answer_data.get('id', None)
+                answer_type = app.answers[final_language][best_index][3]  # Récupérer answer_type
+                print(f"Réponse trouvée dans chatbot_data.csv: {answer}, URL: {url}, ID: {answer_id}, Type: {answer_type}")
+            else:
+                print(f"Aucune correspondance trouvée dans chatbot_data.csv, recherche dans iset_sfax_qna.csv...")
+                qna_answer, qna_category, qna_url, qna_intent, qna_similarity = find_in_iset_sfax_qna(question, final_language, app)
+            
+                if qna_answer:
+                    print(f"Réponse trouvée dans iset_sfax_qna.csv: {qna_answer}")
+                    answer = qna_answer
+                    category = qna_category if qna_category else category
+                    url = qna_url if qna_url else ''
+                    intent = qna_intent if qna_intent else intent
+                    answer_id = len(app.questions[final_language])
+                    similarity_score = qna_similarity
+                    answer_type = 'text'  # Réponses de iset_sfax_qna sont toujours du texte dans cet exemple
 
-            questions_for_lang = app.questions.get(question_lang, [])
-            print(f"Questions disponibles pour {question_lang}: {questions_for_lang}")
-            if not questions_for_lang or not app.vectorizers.get(question_lang):
-                return jsonify({'error': f'Aucune question disponible en {question_lang}'}), 500
-
-            best_match_idx, similarity_score = find_best_match(
-                processed_query, questions_for_lang, app.vectorizers[question_lang], app.tfidf_matrices[question_lang], question_lang
-            ) if questions_for_lang else (-1, 0.0)
-            print(f"Meilleur index: {best_match_idx}, Score de similarité: {similarity_score}")
-
-            app.similarity_threshold = adjust_similarity_threshold()
-            print(f"Seuil de similarité: {app.similarity_threshold}")
-            if similarity_score < app.similarity_threshold:
-                return jsonify({
-                    'answer': 'Désolé, je n’ai pas de réponse pertinente.',
-                    'intent': predicted_intent,
-                    'entities': entities,
-                    'language': question_lang,
-                    'category': predicted_category or 'Inconnu',
-                    'similarity_score': round(similarity_score, 4)
-                }), 200
-
-            if best_match_idx < 0 or best_match_idx >= len(questions_for_lang):
-                return jsonify({
-                    'answer': 'Aucune correspondance trouvée.',
-                    'intent': predicted_intent,
-                    'entities': entities,
-                    'language': question_lang,
-                    'category': predicted_category or 'Inconnu'
-                }), 404
-
-            matched_question = questions_for_lang[best_match_idx]
-            print(f"Question correspondante: {matched_question}")
-            lang = preferred_lang if preferred_lang in ['fr', 'en'] else question_lang
-            print(f"Langue utilisée pour la réponse: {lang}")
-            answer_text, answer_url, answer_id = app.answers[lang][best_match_idx]
-            print(f"Réponse: {answer_text}, URL: {answer_url}, ID: {answer_id}")
-            if preferred_lang and preferred_lang != lang:
-                note = ("Note: No answer in English, using French." if preferred_lang == 'en' else
-                        "Note: Pas de réponse en français, utilisant l'anglais.")
-                answer_text = f"{note}\n{answer_text}"
-
-            if 'course' in entities and not answer_url:
-                answer_url = f"https://isetsf.rnu.tn/fr/formation/{entities['course'].lower().replace(' ', '-')}"
-                answer_text += f" Consultez notre site pour plus d'informations."
-                
-            append_feedback(question_text, answer_id, 'pending', similarity_score)
-
-            with open(app.config['CSV_PATH'], newline='', encoding='utf-8') as csvfile:
-                reader = csv.DictReader(csvfile)
-                category = None
-                for row in reader:
-                    if row['question'] == matched_question and row['language'] == lang:
-                        category = row['category']
-                        print(f"Catégorie trouvée dans CSV pour '{matched_question}': {category}")
-                        break
-                if not category:
-                    print(f"Aucune catégorie trouvée pour question: {matched_question}, langue: {lang}")
-                    category = predicted_category or 'Inconnu'
-
-            return jsonify({
-                'answer': answer_text,
-                'url': answer_url,
+                    print(f"Ajout de la question-réponse à chatbot_data.csv: {question}")
+                    save_to_csv(question, answer, category, final_language, url, intent or '', answer_type)
+                else:
+                    print(f"Aucune correspondance trouvée dans iset_sfax_qna.csv, tentative de scraping...")
+                    mapped_url = map_query_to_url(question)
+                    print(f"URL mappée: {mapped_url}")
+                    answer, url = scrape_iset_website(mapped_url, question, final_language)
+                    if not answer:
+                        answer = "Désolé, je n'ai pas trouvé de réponse pertinente. Veuillez reformuler votre question ou consulter le site officiel de l'ISET Sfax : https://isetsf.rnu.tn/fr"
+                    url = mapped_url
+                    answer_id = len(app.questions[final_language])
+                    print(f"Préparation de l'enregistrement dans chatbot_data.csv pour question: {question}")
+                    save_to_csv(question, answer, category, final_language, url, intent or '', 'text')
+                    print(f"Sauvegardé: {question} (lang: {final_language}, category: {category})")
+    
+            # Ajout du feedback
+            print(f"Préparation de l'ajout du feedback pour question: {question}")
+            append_feedback(question, answer_id or 0, 'pending', similarity_score)
+            print(f"Feedback ajouté: {question}, feedback: pending")
+    
+            # Construction de la réponse
+            response = {
+                'answer': answer,
+                'url': url,
                 'category': category,
-                'similarity_score': round(similarity_score, 4),
+                'similarity_score': similarity_score,
                 'answer_id': answer_id,
-                'language': lang,
-                'intent': predicted_intent,
-                'entities': entities
-            })
-        except Exception as e:
-            print(f"Erreur dans /api/ask: {str(e)}")
-            return jsonify({'error': f'Erreur serveur: {str(e)}'}), 500
+                'language': final_language,
+                'intent': intent,
+                'entities': entities,
+                'answer_type': answer_type  # Ajout du type de réponse
+            }
+    
+            print(f"Réponse finale envoyée (ID: {request_id}): {response}")
+            return jsonify(response)
 
+        except Exception as e:
+            print(f"Erreur dans /api/ask (ID: {request_id}): {str(e)}")
+            return jsonify({'error': f'Erreur serveur: {str(e)}'}), 500
+    @app.route('/images/<path:filename>')
+    def serve_image(filename):
+        try:
+            return send_from_directory('images', filename)
+        except FileNotFoundError:
+            print(f"Fichier non trouvé: {filename}")
+            return "Image non trouvée", 404
+    
     @app.route('/api/suggest', methods=['POST'])
     @token_required
     def suggest_question(current_user):
