@@ -9,9 +9,9 @@ reference_data = pd.read_csv('chatbot_data.csv')[['question']]
 # Charger les données actuelles (production_questions.csv)
 if not os.path.exists('production_questions.csv'):
     print("Aucune donnée de production disponible pour le moment.")
-    exit()
-
-current_data = pd.read_csv('production_questions.csv')[['question']]
+    current_data = pd.DataFrame({'question': []})
+else:
+    current_data = pd.read_csv('production_questions.csv')[['question']]
 
 # Générer un rapport de dérive avec Evidently
 report = Report(metrics=[DataDriftPreset()])
