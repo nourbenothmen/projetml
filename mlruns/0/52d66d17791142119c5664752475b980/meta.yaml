@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/user/chatbot-flask/mlruns/0/52d66d17791142119c5664752475b980/artifacts
+end_time: 1746921255096
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 52d66d17791142119c5664752475b980
+run_name: Category_Classifier
+run_uuid: 52d66d17791142119c5664752475b980
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746921243957
+status: 3
+tags: []
+user_id: user

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/user/chatbot-flask/mlruns/0/39d6d06abedf4c2daca8034f7b9d5543/artifacts
+end_time: 1746918056415
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 39d6d06abedf4c2daca8034f7b9d5543
+run_name: TFIDF_fr
+run_uuid: 39d6d06abedf4c2daca8034f7b9d5543
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746918056200
+status: 3
+tags: []
+user_id: user
